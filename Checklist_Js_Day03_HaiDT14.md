@@ -2,7 +2,7 @@
    1. this
       * this là một trong những cơ chế gây rối nhất trong JS, theo em this là gì ?
       ```
-      TODO
+      this là từ khóa để chỉ 
       ```
       * Cách hiểu 1: this trỏ tới function f, đúng hay sai?
       ```javascript
@@ -51,6 +51,9 @@
 
          new fn(); // cách gọi 4
       ```
+      ```
+      Trả lời
+      ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript 
       function f() {
@@ -61,6 +64,9 @@
 
          f(); // ??
       ```
+      ```
+      Trả lời: Kết quả in ra là 2. Hàm được gọi theo cách (1). "this" lúc này trỏ vào đối tượng window, lý do: biến a mang scope toàn cục.
+      ```
       * Cho đoạn code sau, kết quả in ra là gì ?
       ```javascript
          function g() {
@@ -70,6 +76,9 @@
 
          var b = 2;
          g(); // ??
+      ```
+      ```
+      Trả lời: Báo lỗi "Cannot read property 'b' of undefined". Lý do: bên trong function đang sử dụng strict mode, mọi biến cần được khai báo trước khi sử dụng.
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript 
@@ -83,6 +92,9 @@
       };
 
       o.f(); // ??
+      ```
+      ```
+      Trả lời: Kết quả trả về là 2, hàm được gọi theo cách (2). "this" đang trỏ đến object o.
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
@@ -99,6 +111,9 @@
 
       g(); // ??
       ```
+      ```
+      Trả lời: Hàm được gọi theo kết hợp cách (1)(2). "this" đang trỏ đến object g. Trong g không có thuộc tính a, do đó trả về là undefined.
+      ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
       function f() {
@@ -113,6 +128,9 @@
 
       f.call(o); // ??
       g(); // ??
+      ```
+      ```
+      Trả lời: Kết quả trả về là 2 Hàm được gọi theo kết hợp cách (3). "this" đang trỏ đến object g. 
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
