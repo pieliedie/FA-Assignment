@@ -138,9 +138,28 @@
       ```
    1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
-      ```
+      
       1. Sử dụng vòng lặp for, for...of.
-      2. Sử dụng vòng lặp while.
+      ```  
+        var arr = [1,2,3,4];
+         for(var i = 0 ; i < arr.length ; i++) {
+            console.log(arr[i]);
+         }
+         
+         for(var element of arr){
+            console.log(element);
+         }
+      ```
+      
+      2. Sử dụng vòng lặp while, do...while.
+      ```
+      var arr = [1,2,3,4];
+      var n = 0;
+      while(n < arr.length){
+         console.log(arr[n]);
+      }
+      ```
+      ```
       3. Sử dụng method forEach().
       ```
       * Có những cách nào để duyệt các thuộc tính trong 1 object? Viết code ví dụ
@@ -150,8 +169,18 @@
       ```
    1. Class Theory
       * Nhớ lại OOP là gì ? các thuộc tính của OOP?
+      ```
+      OOP - Lập trình hướng đối tượng là kỹ thuật lập trình hướng đến xây dựng các đối tượng, gồm thuộc tính - là các biến, và phương thức - là các hàm.
+      ```
       * So sánh "class" và "instance"
+      ```
+      Class là tên gọi chỉ một nhóm các đối tượng có cùng thuộc tính và phương thức. Class giống như một bản mô tả về đối tượng.
+      Instance là các thực thể, được lưu trữ trong bộ nhớ, có thuộc tính và phương thức riêng.
+      ```
       * Constructor là gì?
+      ```
+      Constructor là 1 hàm không có tên, dùng để khởi tạo giá trị cho đối tượng. 
+      ```
    1. Prototypes
       * Xem xét đoạn code sau, em có nhận xét gì ?
       ```javascript
