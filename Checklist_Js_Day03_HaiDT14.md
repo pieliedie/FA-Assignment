@@ -21,6 +21,9 @@
       // in ra số lần hàm f đc gọi: 5 lần
       console.log(f.count); // ???
       ```
+      ```
+      Câu này em chưa trả lời được
+      ```
       * Cách hiểu 2: this trỏ tới scope của function, đúng hay sai?
       ```javascript
       function f() {
@@ -33,6 +36,9 @@
       }
 
       f();
+      ```
+      ```
+      Câu này em chưa rõ.
       ```
       * So sánh các dạng gọi hàm như code:
       ```javascript
