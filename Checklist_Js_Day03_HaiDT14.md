@@ -241,3 +241,6 @@
       Trả lời: Giá trị của cả 2 object o1, o2 đều trỏ đến cùng một vùng bộ nhớ. Việc thay đổi giá trị thuộc tính của object o2 sẽ tác động đến object o1 và ngược lại.
       ```
       * Tìm hiểu về Oject.prototype
+      ```
+      Prototype là một khuôn mẫu của các đối tượng. Prototype đóng vai trò quan trọng trong việc kế thừa của Javascript.
+      ```
