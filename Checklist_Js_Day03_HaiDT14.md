@@ -2,7 +2,7 @@
    1. this
       * this là một trong những cơ chế gây rối nhất trong JS, theo em this là gì ?
       ```
-      this là từ khóa để chỉ đối tượng đang sở hữu các thuộc tính hoặc phương thức nào đó.
+      this là từ khóa để trỏ đến một đối tượng nào đó.
       ```
       * Cách hiểu 1: this trỏ tới function f, đúng hay sai?
       ```javascript
@@ -151,6 +151,9 @@
       ```
       * Viết dụ kết hợp cả 4 cách gọi hàm để chỉ ra thứ tự khi gọi hàm ảnh hưởng đến this ra sao?
       * Từ đó theo em quy tác để xác định this là gì?
+      ```
+      Em chưa rõ. 
+      ```
    1. Object
       * Liệt kê lại 6 kiểu nguyên thuỷ trong JS ? liệt kê những kiểu Object có sẵn trong JS?
       ```
