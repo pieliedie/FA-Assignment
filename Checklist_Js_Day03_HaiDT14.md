@@ -134,15 +134,20 @@
       * Có những cách nào để clone 1 object ?
       ```
          1. Sử dụng method Object.create()
-         1. Sử dụng method Object.assign() (ES6)
+         2. Sử dụng method Object.assign() (ES6)
       ```
    1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
       ```
-      1. Sử dụng vòng lặp for.
+      1. Sử dụng vòng lặp for, for...of.
       2. Sử dụng vòng lặp while.
+      3. Sử dụng method forEach().
       ```
       * Có những cách nào để duyệt các thuộc tính trong 1 object? Viết code ví dụ
+      ```
+       1. Sử dụng vòng lặp for, for...in.
+       
+      ```
    1. Class Theory
       * Nhớ lại OOP là gì ? các thuộc tính của OOP?
       * So sánh "class" và "instance"
