@@ -124,7 +124,12 @@
       * Từ đó theo em quy tác để xác định this là gì?
    1. Object
       * Liệt kê lại 6 kiểu nguyên thuỷ trong JS ? liệt kê những kiểu Object có sẵn trong JS?
+      ```
+      6 kiểu nguyên thủy trong JS: string, number, boolean, null, undefined, symbol.
+      Những kiểu Object có sẵn trong JS: Object, Number, String, Array
+      ```
       * Có những cách nào để clone 1 object ?
+      
    1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
       * Có những cách nào để duyệt các thuộc tính trong 1 object? Viết code ví dụ
