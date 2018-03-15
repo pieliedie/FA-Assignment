@@ -1,6 +1,9 @@
 1. this & Object prototype
    1. this
       * this là một trong những cơ chế gây rối nhất trong JS, theo em this là gì ?
+      ```
+      TODO
+      ```
       * Cách hiểu 1: this trỏ tới function f, đúng hay sai?
       ```javascript
       function f(num) {
@@ -126,10 +129,13 @@
       * Liệt kê lại 6 kiểu nguyên thuỷ trong JS ? liệt kê những kiểu Object có sẵn trong JS?
       ```
       6 kiểu nguyên thủy trong JS: string, number, boolean, null, undefined, symbol.
-      Những kiểu Object có sẵn trong JS: Object, Number, String, Array
+      Những kiểu Object có sẵn trong JS: Object, Number, String, Array, Function
       ```
       * Có những cách nào để clone 1 object ?
-      
+      ```
+         1. Sử dụng method Object.create()
+         1. 
+      ```
    1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
       * Có những cách nào để duyệt các thuộc tính trong 1 object? Viết code ví dụ
