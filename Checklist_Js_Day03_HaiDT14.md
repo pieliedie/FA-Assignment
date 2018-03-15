@@ -122,17 +122,17 @@
       ```
       * Viết dụ kết hợp cả 4 cách gọi hàm để chỉ ra thứ tự khi gọi hàm ảnh hưởng đến this ra sao?
       * Từ đó theo em quy tác để xác định this là gì?
-   2. Object
+   1. Object
       * Liệt kê lại 6 kiểu nguyên thuỷ trong JS ? liệt kê những kiểu Object có sẵn trong JS?
       * Có những cách nào để clone 1 object ?
-   3. Iteration
+   1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
       * Có những cách nào để duyệt các thuộc tính trong 1 object? Viết code ví dụ
-   4. Class Theory
+   1. Class Theory
       * Nhớ lại OOP là gì ? các thuộc tính của OOP?
       * So sánh "class" và "instance"
       * Constructor là gì?
-   5. Prototypes
+   1. Prototypes
       * Xem xét đoạn code sau, em có nhận xét gì ?
       ```javascript
       var o1 = {
