@@ -2,7 +2,7 @@
    1. this
       * this là một trong những cơ chế gây rối nhất trong JS, theo em this là gì ?
       ```
-      this là từ khóa để chỉ 
+      this là từ khóa để chỉ đối tượng đang sở hữu các thuộc tính hoặc phương thức nào đó.
       ```
       * Cách hiểu 1: this trỏ tới function f, đúng hay sai?
       ```javascript
@@ -52,7 +52,11 @@
          new fn(); // cách gọi 4
       ```
       ```
-      Trả lời
+      Trả lời:
+         1. Cách gọi (1) được gọi là function invocation, đặt dấu () sau function để thực thi. 
+         2. Cách gọi (2) được gọi là method invocation. Hàm fn là giá trị của method "method" của object o. Do đó khi cần thực thi hàm fn, cú pháp sẽ là o.method().
+         3. Cách gọi (3) là call invocation. Call, apply là những method có sẵn nằm trong Function.prototype. Phần này em chưa rõ.
+         4. Cách gọi (4) là constructor invocation. Phần này em chưa rõ.
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript 
@@ -130,8 +134,9 @@
       g(); // ??
       ```
       ```
-      Trả lời: Kết quả trả về là 2 Hàm được gọi theo kết hợp cách (3). "this" đang trỏ đến object g. 
+      Trả lời: Kết quả trả về là 2. Hàm được gọi theo cách (3). "this" đang trỏ đến object o. 
       ```
+      *Phần này em chưa rõ.*
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
       function f(a) {
@@ -141,18 +146,22 @@
       var g = new f(2);
       console.log(g.a); // ???
       ```
+      ```
+      Trả lời: Kết quả trả về là 2. Hàm được gọi theo cách (4). "this" đang trỏ đến object g. 
+      ```
       * Viết dụ kết hợp cả 4 cách gọi hàm để chỉ ra thứ tự khi gọi hàm ảnh hưởng đến this ra sao?
       * Từ đó theo em quy tác để xác định this là gì?
    1. Object
       * Liệt kê lại 6 kiểu nguyên thuỷ trong JS ? liệt kê những kiểu Object có sẵn trong JS?
       ```
       6 kiểu nguyên thủy trong JS: string, number, boolean, null, undefined, symbol.
-      Những kiểu Object có sẵn trong JS: Object, Number, String, Array, Function
+      Những kiểu Object có sẵn trong JS: Object, Number, String, Array, Function, Date,...
       ```
       * Có những cách nào để clone 1 object ?
       ```
          1. Sử dụng method Object.create()
          2. Sử dụng method Object.assign() (ES6)
+         3. Khởi tạo trực tiếp một biến, gán cho biến đó một object.
       ```
    1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
@@ -227,5 +236,8 @@
 
       o1.a = 10;
       console.log(o2.a); // ??
+      ```
+      ```
+      Trả lời: Giá trị của cả 2 object o1, o2 đều trỏ đến cùng một vùng bộ nhớ. Việc thay đổi giá trị thuộc tính của object o2 sẽ tác động đến object o1 và ngược lại.
       ```
       * Tìm hiểu về Oject.prototype
