@@ -139,34 +139,49 @@
    1. Iteration
       * Có những cách nào để duyệt các phần tử trong 1 array ? Viết code ví dụ
       
-      1. Sử dụng vòng lặp for, for...of.
-      ```  
-        var arr = [1,2,3,4];
-         for(var i = 0 ; i < arr.length ; i++) {
-            console.log(arr[i]);
+         1. Sử dụng vòng lặp for, for...of.
+         ```  
+           var arr = [1,2,3,4];
+            for(var i = 0 ; i < arr.length ; i++) {
+               console.log(arr[i]);
+            }
+
+            for(var element of arr){
+               console.log(element);
+            }
+         ```
+
+         2. Sử dụng vòng lặp while, do...while.
+         ```
+         var arr = [1,2,3,4];
+         var n = 0;
+         while(n < arr.length){
+            console.log(arr[n]);
+            n++;
          }
-         
-         for(var element of arr){
-            console.log(element);
-         }
-      ```
-      
-      2. Sử dụng vòng lặp while, do...while.
-      ```
-      var arr = [1,2,3,4];
-      var n = 0;
-      while(n < arr.length){
-         console.log(arr[n]);
-      }
-      ```
-      ```
-      3. Sử dụng method forEach().
-      ```
+         ```
+         ```
+         do {
+            console.log(arr[n]);
+            n++;
+         } while (n < arr.length);
+         ```
+         3. Sử dụng method forEach().
+         ```
+         var arr = [1, 2, 3, 4];
+         arr.forEach(function (val) {
+            console.log(val);
+         });
+         ```
       * Có những cách nào để duyệt các thuộc tính trong 1 object? Viết code ví dụ
-      ```
-       1. Sử dụng vòng lặp for, for...in.
-       
-      ```
+         1. Sử dụng kết hợp forEach() với Object.keys().
+         ```
+         var obj = { first: "Hai", last: "Do" };
+
+         Object.keys(obj).forEach(function(key) {
+             console.log(key, obj[key]);
+         });
+         ```
    1. Class Theory
       * Nhớ lại OOP là gì ? các thuộc tính của OOP?
       ```
