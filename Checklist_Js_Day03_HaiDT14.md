@@ -140,7 +140,7 @@
       g(); // ??
       ```
       ```
-      Trả lời: Kết quả trả về là 2. Hàm được gọi theo cách (3). "this" đang trỏ đến object o. 
+      Trả lời: Kết quả trả về là 2 2 và báo lỗi. Hàm được gọi theo cách (3). "this" đang trỏ đến object o. 
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
