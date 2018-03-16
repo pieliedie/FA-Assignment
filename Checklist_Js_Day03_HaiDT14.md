@@ -22,7 +22,7 @@
       console.log(f.count); // ???
       ```
       ```
-      Câu này em chưa trả lời được
+      Cách hiểu này sai, this đang trỏ đến object window.
       ```
       * Cách hiểu 2: this trỏ tới scope của function, đúng hay sai?
       ```javascript
@@ -38,7 +38,7 @@
       f();
       ```
       ```
-      Câu này em chưa rõ.
+      Cách hiểu này sai.
       ```
       * So sánh các dạng gọi hàm như code:
       ```javascript
