@@ -109,20 +109,54 @@
    Bên trong hàm callback, phần code (1) được đưa vào call stack. Sau khi xử lý xong, stack đưa đoạn code (1) ra ngoài và push hàm setTimeOut vào. Stack chuyển hàm này cho webapi xử lý và push phần code (3) vào. Sau khi xử lý xong và pop đoạn code (3) ra ngoài, stack nhận đoạn code (2) mà event loop đưa vào (từ stack queue) để xử lý. Sau khi xử lý xong đoạn code (2), stack đẩy đoạn code ra ngoài. Chương trình kết thúc. Thứ tự chạy của chương trình là (0) => (1) => (3) => (2).
  * Theo eo những điểu bất lợi của callbacks là gì ?
   Trả lời:
-   1. Việc lồng quá nhiều callback sẽ khiến code khó đọc.
+   1. Việc lồng quá nhiều callback sẽ khiến code khó đọc, khó bảo trì.
 
 ## 1.5 Promises
  * Tìm hiểu về Promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+  ```
+  Promise là một đối tượng đại diện cho kết quả cuối cùng của một tác vụ không đồng bộ, có thể là hoàn thành hoặc thất bại.
+  Một promise tồn tại ở 3 trạng thái: 
+   - pending: Trạng thái ban đầu, chưa có kết quả thành công hay thất bại.
+   - fulfilled: Tác vụ thành công.
+   - rejected: Tác vụ thất bại.
+  ```
  * What is a future value ?
  * Promise value ?
+  
  * Promise Events ?
  * How to get Promise value?
+   ```
+   - Khi promise được fullfill, giá trị của nó được truyền đi thông qua param của method resolve, giá trị đó có thể nhận được qua param của hàm callback thứ nhất trong function then().
+        var p = Promise.resolve("Success");
+         p.then(function(v) {
+           console.log(v); // Success
+         });
+   ```
  * How to handle error in Promise ?
-  Sử dụng method Promise.prototype.catch()
+   ``` 
+   Sử dụng method Promise.prototype.catch()
+   ```
  * How to chain Promises ?
-  Sử dụng method then
+    ```
+    Kết hợp việc trả về 1 promise và sử dụng method then
+    
+    doSomething().then(function(result) {
+     return doSomethingElse(result);
+   })
+   .then(function(newResult) {
+     return doThirdThing(newResult);
+   })
+   .then(function(finalResult) {
+     console.log('Got the final result: ' + finalResult);
+   })
+   .catch(failureCallback);
+    ```
  * Promise.all
-  Cùng lúc tiến hành nhiều promise khác nhau, khi tất cả promise đều hoàn thành thì mới bắt đầu thực hiện các hành động ở đằng sau.
+    ```
+    Cùng lúc tiến hành nhiều promise khác nhau, khi tất cả promise đều hoàn thành thì mới bắt đầu thực hiện các hành động ở đằng sau.
+    ```
  * Promise.race
-   Cùng lúc tiến hành nhiều promise khác nhau, chỉ cần 1 trong số các promise đó hoàn thành thì bắt đầu thực hiện các hành động ở đằng sau.
+    ```
+    Cùng lúc tiến hành nhiều promise khác nhau, chỉ cần 1 trong số các promise đó hoàn thành thì bắt đầu thực hiện các hành động ở đằng     sau.
+    ```
  * finally
