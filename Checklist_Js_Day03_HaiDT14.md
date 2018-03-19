@@ -2,7 +2,7 @@
    1. this
       * this là một trong những cơ chế gây rối nhất trong JS, theo em this là gì ?
       ```
-      this là từ khóa để trỏ đến một đối tượng nào đó.
+      this là từ khóa để trỏ đến đối tượng đang gọi hàm đó. Đối tượng mà this trỏ đến thay đổi tùy theo cách hàm đó được gọi.
       ```
       * Cách hiểu 1: this trỏ tới function f, đúng hay sai?
       ```javascript
