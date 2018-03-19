@@ -1,10 +1,10 @@
 # 1 Async
 ## 1.1 Sync vs Async
-  * Sync code là gì
+  * Sync code là gì <br/>
     Trả lời: Là những dòng code được thực thi theo thứ tự từ trên xuống dưới, dòng code phía dưới phải đợi cho đến khi dòng code phía trên được xử lí xong.
-  * Async code là gì
+  * Async code là gì <br/>
     Trả lời: Là những đoạn code có thể thực thi ngay, không cần phần phải đợi code phía trên được xử lý xong. 
-  * Theo em JavaScript là ngôn ngữ đồng bộ hay bất đồng bộ
+  * Theo em JavaScript là ngôn ngữ đồng bộ hay bất đồng bộ? <br/>
     Trả lời: Theo em, Javascript là ngôn ngữ bất đồng bộ. 
 ## 1.2 setTimeOut
   * Cho hàm setTimeout có định nghĩa như sau: https://www.w3schools.com/jsref/met_win_settimeout.asp
