@@ -27,8 +27,8 @@
     console.log('Hi again');
     ```
   Trả lời: Console in ra chữ "Hi", sau đó là "Hi again" và cuối cùng in ra chữ "there"
-  * Từ ví dụ trên em có nhận xét gì ?
-  Trả lời: Các đoạn code đã được xử lý một cách bất đồng bộ. Đoạn code đặt trong hàm setTimeOut không còn được đặt trong luồng xử lý tuần   tự nữa.
+  * Từ ví dụ trên em có nhận xét gì ? <br/>
+  Trả lời: Các đoạn code đã được xử lý một cách bất đồng bộ. Trình tự thực thi các đoạn code không còn diễn ra tuần tự nữa.
   
 ## 1.3 Event Loop
   * Tìm hiểu về Event loop, và giải thích lại đoạn code trên theo ý hiểu của em. Reference: https://www.youtube.com/watch?v=8aGhZQkoFbQ
