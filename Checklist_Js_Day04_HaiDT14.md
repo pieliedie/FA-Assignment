@@ -73,3 +73,52 @@
   11. event loop kiểm tra xem call stack có rỗng không. Stack đang rỗng, event loop đẩy hàm ở đỉnh task queue vào stack.
   12. Hàm callback được thực thi, in ra console chữ "there".
   
+## 1.4 Callbacks
+  * Tìm hiểu về callback funtions trong JS
+  Callback được hiểu là 1 function được truyền vào 1 function khác dưới dạng 1 parameter. Tại 1 thời điểm nào đó, function này sẽ được thực thi bên trong hàm mà nó được truyền vào.
+  vd: 
+  ```
+  function f(g){
+  //do something
+   g();
+  }
+  ```
+  * Người ta nói callback functions đóng gói tính liên tục của chương trình. Theo em chương trình dưới sẽ được chạy liên tục ra sao?
+  ```
+    // (1)
+  setTimeout(function () {
+    // (2)
+  }, 1000);
+  // (3)
+  ```
+  Theo em, thứ tự chạy của chương trình là (1) => (3) => (2)
+### 1.4.1 Nested/Chained Callbacks
+  * Xét đoạn code sau, khi người dùng click vào btn thì điều gì xảy ra?
+  ```
+    // (0)
+   var btn = document.getElementById('btn');
+   btn.addEventListener('click', function () {
+     // (1)
+     setTimeout(function () {
+       // (2)
+     }, 1000);
+     // (3)
+   });
+   ```
+   Trả lời: Khi người dùng click vào btn, hàm callback được thực thi.
+   Bên trong hàm callback, phần code (1) được đưa vào call stack. Sau khi xử lý xong, stack đưa đoạn code (1) ra ngoài và push hàm setTimeOut vào. Stack chuyển hàm này cho webapi xử lý và push phần code (3) vào. Sau khi xử lý xong và pop đoạn code (3) ra ngoài, stack nhận đoạn code (2) mà event loop đưa vào (từ stack queue) để xử lý. Sau khi xử lý xong đoạn code (2), stack đẩy đoạn code ra ngoài. Chương trình kết thúc. Thứ tự chạy của chương trình là (0) => (1) => (3) => (2).
+ * Theo eo những điểu bất lợi của callbacks là gì ?
+  Trả lời:
+   1. Việc lồng quá nhiều callback sẽ khiến code khó đọc.
+
+## 1.5 Promises
+ * Tìm hiểu về Promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+ * What is a future value ?
+ * Promise value ?
+ * Promise Events ?
+ * How to get Promise value?
+ * How to handle error in Promise ?
+ * How to chain Promises ?
+ * Promise.all
+ * Promise.race
+ * finally
