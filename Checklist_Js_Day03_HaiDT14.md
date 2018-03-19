@@ -122,7 +122,7 @@
       g(); // ??
       ```
       ```
-      Trả lời: Hàm được gọi theo kết hợp cách (1)(2). "this" đang trỏ đến object g. Trong g không có thuộc tính a, do đó trả về là undefined.
+      Trả lời: Kq trả về là undefined.
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
