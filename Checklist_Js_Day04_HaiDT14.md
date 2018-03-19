@@ -118,7 +118,11 @@
  * Promise Events ?
  * How to get Promise value?
  * How to handle error in Promise ?
+  Sử dụng method Promise.prototype.catch()
  * How to chain Promises ?
+  Sử dụng method then
  * Promise.all
+  Cùng lúc tiến hành nhiều promise khác nhau, khi tất cả promise đều hoàn thành thì mới bắt đầu thực hiện các hành động ở đằng sau.
  * Promise.race
+   Cùng lúc tiến hành nhiều promise khác nhau, chỉ cần 1 trong số các promise đó hoàn thành thì bắt đầu thực hiện các hành động ở đằng sau.
  * finally
