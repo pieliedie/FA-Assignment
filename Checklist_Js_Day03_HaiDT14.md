@@ -122,7 +122,7 @@
       g(); // ??
       ```
       ```
-      Trả lời: Kq trả về là undefined.
+      Trả lời: Kq trả về là undefined. Hàm đc gọi theo cách (2)
       ```
       * Cho đoạn code sau, kết quả in ra là gì ? hàm được gọi theo cách nào? theo em trong trường hợp này this trỏ vào đối tượng nào ?
       ```javascript
