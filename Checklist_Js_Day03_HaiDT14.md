@@ -157,7 +157,10 @@
       * Viết dụ kết hợp cả 4 cách gọi hàm để chỉ ra thứ tự khi gọi hàm ảnh hưởng đến this ra sao?
       * Từ đó theo em quy tác để xác định this là gì?
       ```
-      Em chưa rõ. 
+      1. Constructor invocation ==> this trỏ tới object mới được tạo.
+      2. bind, call, apply ==> this trỏ tới đối số đầu tiên của các method này.
+      3. Method invocation ==> this trỏ tới object gọi method đó.
+      4. Function invocation ==> this trỏ tới window.
       ```
    1. Object
       * Liệt kê lại 6 kiểu nguyên thuỷ trong JS ? liệt kê những kiểu Object có sẵn trong JS?
