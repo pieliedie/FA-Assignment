@@ -105,8 +105,7 @@
      // (3)
    });
    ```
-   Trả lời: Khi người dùng click vào btn, hàm callback được thực thi.
-   Bên trong hàm callback, phần code (1) được đưa vào call stack. Sau khi xử lý xong, stack đưa đoạn code (1) ra ngoài và push hàm setTimeOut vào. Stack chuyển hàm này cho webapi xử lý và push phần code (3) vào. Sau khi xử lý xong và pop đoạn code (3) ra ngoài, stack nhận đoạn code (2) mà event loop đưa vào (từ stack queue) để xử lý. Sau khi xử lý xong đoạn code (2), stack đẩy đoạn code ra ngoài. Chương trình kết thúc. Thứ tự chạy của chương trình là (0) => (1) => (3) => (2).
+   Trả lời: Đầu tiên, hàm addEventListener được đưa vào call stack, sau đó được chuyển qua webapi để xử lý. Khi người dùng click vào btn, webapi trả về hàm callback và đưa vào task queue. Eventloop kiểm tra call stack có rỗng không. Call stack đang rỗng. Hàm callback được đưa vào stack. Đoạn code (1) được đưa vào stack, sau khi thực thi xong, nó được đẩy ra ngoài. Đoạn code setTimeOut được đưa vào stack và được chuyển qua webapi xử lý. Đoạn code (3) được đưa vào stack call và được đẩy khỏi stack khi được xử lý xong. Hàm callback được đưa ra khỏi stack. Sau 1s, anonymous function trong hàm setTimeOut được trả về task queue. Event loop đẩy function đó vào stack call lúc này đang rỗng. Đoạn code (2) được thực thi và đẩy ra khỏi stack. Chương trình kết thúc, thứ tự chạy là (0) => (1) => (3) => (2).
  * Theo eo những điểu bất lợi của callbacks là gì ? <br/>
   Trả lời:
    1. Việc lồng quá nhiều callback sẽ khiến code khó đọc, khó bảo trì.
@@ -161,5 +160,5 @@
     ```
  * finally
    ```
-   method finally() trả về một Promise. Hàm finally truyền vào 1 callback thực thi một hành động nào đó sau khi Promise đã được xử lý      xong.
+   method finally() trả về một Promise. Hàm finally truyền vào 1 callback thực thi một hành động nào đó sau khi Promise đã được xử lý xong.
    ```
