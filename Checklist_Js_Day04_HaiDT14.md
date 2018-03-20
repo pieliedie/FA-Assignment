@@ -120,9 +120,17 @@
    - rejected: Tác vụ thất bại.
   ```
  * What is a future value ?
+ ```
+ NA
+ ```
  * Promise value ?
-  
+  ```
+  NA
+  ```
  * Promise Events ?
+ ```
+ NA
+ ```
  * How to get Promise value?
    ```
    - Khi promise được fullfill, giá trị của nó được truyền đi thông qua param của method resolve, giá trị đó có thể nhận được qua param của hàm callback thứ nhất trong function then().
