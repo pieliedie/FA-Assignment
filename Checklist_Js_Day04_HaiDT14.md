@@ -109,6 +109,7 @@
  * Theo eo những điểu bất lợi của callbacks là gì ? <br/>
   Trả lời:
    1. Việc lồng quá nhiều callback sẽ khiến code khó đọc, khó bảo trì.
+   2. Khó xác định context của con trỏ this khi sử dụng callback.
 
 ## 1.5 Promises
  * Tìm hiểu về Promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
