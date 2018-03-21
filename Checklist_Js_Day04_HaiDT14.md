@@ -5,7 +5,7 @@
   * Async code là gì <br/>
     Trả lời: Là những đoạn code có thể thực thi ngay, không cần phần phải đợi code phía trên được xử lý xong. 
   * Theo em JavaScript là ngôn ngữ đồng bộ hay bất đồng bộ? <br/>
-    Trả lời: Theo em, Javascript là ngôn ngữ bất đồng bộ. 
+    Trả lời: Theo em, Javascript là ngôn ngữ đồng bộ. 
 ## 1.2 setTimeOut
   * Cho hàm setTimeout có định nghĩa như sau: https://www.w3schools.com/jsref/met_win_settimeout.asp
   * Set đoạn code sau, hãy mô tả chính xác những gì xảy ra và kết quả in ra là gì ?
