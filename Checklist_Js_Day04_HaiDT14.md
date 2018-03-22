@@ -123,12 +123,12 @@
    - rejected: Tác vụ thất bại.
   ```
  * What is a future value ?
- ```
- NA
+  ```
+ Là những kết quả dự tính có thể nhận được của promise trong trạng thái pending.
  ```
  * Promise value ?
   ```
-  NA
+  Là kết quả thực tế của promise.
   ```
  * Promise Events ?
  ```
