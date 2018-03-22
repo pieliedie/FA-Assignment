@@ -141,6 +141,11 @@
          p.then(function(v) {
            console.log(v); // Success
          });
+   - Tương tự, khi promise bị reject, method then sẽ nhận thông điệp mà reject() đã gửi đi và truyền vào hàm callback thứ 2 dưới dạng parameter.
+       var p = Promise.reject("Error");
+         p.then(function (){}, function(v) {
+           console.log(v); // Error
+         });
    ```
  * How to handle error in Promise ?
    ``` 
