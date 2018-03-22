@@ -132,7 +132,7 @@
   ```
  * Promise Events ?
  ```
- NA
+ Là những hành động diễn ra sau khi promise trả về kết quả thành công hay không thành công.
  ```
  * How to get Promise value?
    ```
