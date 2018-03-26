@@ -92,7 +92,7 @@
   ```
   Trả lời: Kết quả obj.method() là undefined, obj2.method() là 10
     Giải thích: Ở object obj, hàm vô danh được truyền vào function setTimeOut dưới dạng callback, giá trị của this sẽ trỏ đến đối tượng      window. Do window không có biến a, kết quả trả về là undefined.<br>
-  1.3.6 Promise
+  1.3.6 Promise<br>
   Compare 2 Promise call below, what do you think ? If v is null or undefined what will happend ? How you handle that ?
    ```
    p.then(function (v) { return v.id });
