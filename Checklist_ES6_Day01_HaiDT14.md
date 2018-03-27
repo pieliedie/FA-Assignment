@@ -150,6 +150,25 @@
   ```
 ## 1.4 Block Scope
 ### 1.4.1 Compare let and var
+```
+- Biến được khai báo bởi var có scope là function scope hoặc global scope. Biến được khai báo bởi let có scope là block scope.<br>
+Vd: let i = 5;
+    if(i === 5) {
+      let j = 2; 
+    }
+console.log(j); //ReferenceError
+<br>
+- Biến khai báo bằng let không hoist lên đầu scope được.<br>
+vd: {
+  console.log(c); // undefined. Due to hoisting
+  var c = 2;
+}
+
+{
+  console.log(b); // ReferenceError: b is not defined
+  let b = 3;
+}
+```
 ### 1.4.2 Closures scope, how do let work in closures, try example below
   ```
   for (let i = 0; i < 3; i++) {
@@ -160,6 +179,12 @@
   }
 ```
 ### 1.4.3 What is const ? Example ?
+```
+const là từ khóa để khai báo biến có giá trị cố định, không thể thay đổi được.
+VD: const x = 5;
+    x = 6; // Uncaught TypeError: Assignment to constant variable.
+    console.log(x);
+```
 ### 1.4.4 Exercise: fix code below (anywhere) so the console.log will display true
   ```
     var x = 2, fns = [];
