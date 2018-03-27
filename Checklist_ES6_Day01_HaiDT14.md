@@ -73,6 +73,7 @@
   const myFunc = x => 4;
   console.log(myFunc.name);
   ```
+  Answer: True.
   ### 1.3.5 this
   Evaluate the code below, can you explain what happens ?
   ```
@@ -99,7 +100,7 @@
   ```
   Trả lời: Kết quả obj.method() là undefined, obj2.method() là 10.<br>
   Giải thích: Ở object obj, hàm vô danh được truyền vào function setTimeOut dưới dạng callback, giá trị của this sẽ trỏ đến đối tượng      window. Do object window không có biến a, kết quả trả về là undefined.<br>
-    this trong arrow function đã được bind vào object obj2, do đó this.a == obj2.a == 10
+    + this trong arrow function đã được bind vào object obj2, do đó this.a == obj2.a == 10
   ### 1.3.6 Promise
   Compare 2 Promise call below, what do you think ? If v is null or undefined what will happend ? How you handle that ?
    ```
@@ -181,7 +182,7 @@ vd: {
 ```
 const là từ khóa để khai báo biến có giá trị cố định, không thể gán giá trị mới cho nó được.
 VD: const x = 5;
-    x = 6; // Uncaught TypeError: Assignment to constant variable.
+    x = 6; // Uncaught TypeError
     console.log(x);
 ```
 ### 1.4.4 Exercise: fix code below (anywhere) so the console.log will display true
