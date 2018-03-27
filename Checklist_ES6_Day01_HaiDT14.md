@@ -180,7 +180,7 @@ vd: {
 ```
 ### 1.4.3 What is const ? Example ?
 ```
-const là từ khóa để khai báo biến có giá trị cố định, không thể thay đổi được.
+const là từ khóa để khai báo biến có giá trị cố định, không thể gán giá trị mới cho nó được.
 VD: const x = 5;
     x = 6; // Uncaught TypeError: Assignment to constant variable.
     console.log(x);
