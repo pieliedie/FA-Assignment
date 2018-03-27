@@ -98,7 +98,8 @@
   obj2.mthod();
   ```
   Trả lời: Kết quả obj.method() là undefined, obj2.method() là 10.<br>
-  Giải thích: Ở object obj, hàm vô danh được truyền vào function setTimeOut dưới dạng callback, giá trị của this sẽ trỏ đến đối tượng      window. Do window không có biến a, kết quả trả về là undefined.<br>
+  Giải thích: Ở object obj, hàm vô danh được truyền vào function setTimeOut dưới dạng callback, giá trị của this sẽ trỏ đến đối tượng      window. Do object window không có biến a, kết quả trả về là undefined.<br>
+    this trong arrow function đã được bind vào object obj2, do đó this.a == obj2.a == 10
   ### 1.3.6 Promise
   Compare 2 Promise call below, what do you think ? If v is null or undefined what will happend ? How you handle that ?
    ```
@@ -109,44 +110,42 @@
   ### 1.3.7 Exercise 01: rewrite all function below with arrow functions and try to avoid curly braces {} as much as possible
   Trả lời:
   ```
-      (function iife(){
+   (function iife(){
 
-      function foo(x) {
-        var y = x * 2;
+    function foo(x) {
+      var y = x * 2;
 
-        return function bar(z) {
-          if (z.length > 3) {
-            return z.map( function baz(v){
-              if (v > 3) return v + y;
-              else return baz( v * 4 );
-            } );
-          }
-          else {
-            var obj = [];
+      return function (z) {
+        if (z.length > 3) {
+          return z.map( function baz(v){
+            if (v > 3) return v + y;
+            else return baz( v * 4 );
+          } );
+        }
+        else {
+          var obj = [];
 
-            setTimeout( function bam(){
-              obj.length = 1;
-              obj[0] = this.w;
-            }.bind( this ), 100 );
+          setTimeout( () => {
+            obj.length = 1;
+            obj[0] = this.w;
+          }, 100 );
 
-            return obj;
-          }
-        };
-      }
+          return obj;
+        }
+      };
+    }
 
-      var p = foo( 2 );
-      var list1 = [1,3,4];
-      var list2 = list1.concat( 6 );
+    var p = foo( 2 );
+    var list1 = [1,3,4];
+    var list2 = list1.concat( 6 );
 
-      list1 = p.call( { w: 42 }, list1 );
-      list2 = p( list2 );
+    list1 = p.call( { w: 42 }, list1 );
+    list2 = p( list2 );
 
-      setTimeout( function(){
-        console.log( list1[0] === list2.reduce( function(s,v){
-          return s + v;
-        }, 0 ) );
-      }, 200 );
-    })();
+    setTimeout( function(){
+      console.log( list1[0] === list2.reduce( (s,v) => s + v, 0 ) );
+    }, 200 );
+  })();
   ```
 ## 1.4 Block Scope
 ### 1.4.1 Compare let and var
