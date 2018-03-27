@@ -52,7 +52,7 @@
  ### 1.3.2 Compare arrow function syntax to ES5 function syntax ?<br>
  ```
  - Trong ES5, khi khai báo function thì cần sử dụng từ khóa "function", còn trong ES6, ta dùng dấu fat arrow "=>".
- - Khi sử dụng arrow function, có thể bỏ từ khóa return trong một số trường hợp.
+ - Khi sử dụng arrow function, có thể bỏ từ khóa return và cặp dấu {} trong một số trường hợp.
   ```
   ### 1.3.3 Arrow function variations, try them in Babel Repl, fix error if any<br>
   ```
@@ -113,7 +113,7 @@
   ```
    (function iife(){
 
-    function foo(x) {
+    var foo = (x) => {
       var y = x * 2;
 
       return function (z) {
@@ -178,9 +178,11 @@ vd: {
     });
   }
 ```
+Trả lời: Click vào btn0, cửa sổ alert hiện ra với giá trị 0, tương tự khi click vào btn1, 2.
+          Lý do vì sao thì em chưa thực sự rõ, có thể do block scope của việc sử dụng từ khóa let.
 ### 1.4.3 What is const ? Example ?
 ```
-const là từ khóa để khai báo biến có giá trị cố định, không thể gán giá trị mới cho nó được.
+const là từ khóa để khai báo biến có giá trị duy nhất khi được khởi tạo, không thể gán giá trị khác cho nó được.
 VD: const x = 5;
     x = 6; // Uncaught TypeError
     console.log(x);
