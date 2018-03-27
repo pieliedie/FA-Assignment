@@ -151,13 +151,13 @@
 ## 1.4 Block Scope
 ### 1.4.1 Compare let and var
 ```
-- Biến được khai báo bởi var có scope là function scope hoặc global scope. Biến được khai báo bởi let có scope là block scope.<br>
+- Biến được khai báo bởi var có scope là function scope hoặc global scope. Biến được khai báo bởi let có scope là block scope.
 Vd: let i = 5;
     if(i === 5) {
       let j = 2; 
     }
 console.log(j); //ReferenceError
-<br>
+
 - Biến khai báo bằng let không hoist lên đầu scope được.<br>
 vd: {
   console.log(c); // undefined. Due to hoisting
