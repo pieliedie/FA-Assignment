@@ -182,7 +182,7 @@ Trả lời: Click vào btn0, cửa sổ alert hiện ra với giá trị 0, tư
           Lý do vì sao thì em chưa thực sự rõ, có thể do block scope của việc sử dụng từ khóa let.
 ### 1.4.3 What is const ? Example ?
 ```
-const là từ khóa để khai báo biến có giá trị duy nhất khi được khởi tạo, không thể gán giá trị khác cho nó được.
+const là từ khóa để khai báo biến có giá trị duy nhất khi được khởi tạo, không thể gán giá trị khác cho nó, không thể khai báo biến khác trùng tên với nó.
 VD: const x = 5;
     x = 6; // Uncaught TypeError
     console.log(x);
