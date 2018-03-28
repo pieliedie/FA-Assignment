@@ -99,8 +99,8 @@
   obj2.mthod();
   ```
   Trả lời: Kết quả obj.method() là undefined, obj2.method() là 10.<br>
-  Giải thích: Ở object obj, hàm vô danh được truyền vào function setTimeOut dưới dạng callback, giá trị của this sẽ trỏ đến đối tượng      window. Do object window không có biến a, kết quả trả về là undefined.<br>
-    + this trong arrow function đã được bind vào object obj2, do đó this.a == obj2.a == 10
+  Giải thích: Ở object obj, hàm vô danh được truyền vào hàm setTimeOut dưới dạng callback. Hàm callback này được thực thi dưới dạng function invocation, this lúc này trỏ đến window.<br>
+  Ở obj2, this nằm trong arrow function, nó sẽ tự động tìm lên cha của arrow function đó là function method. Mà method là 1 thuộc tính của object obj2 cho nên this lúc này trỏ đến obj2.
   ### 1.3.6 Promise
   Compare 2 Promise call below, what do you think ? If v is null or undefined what will happend ? How you handle that ?
    ```
@@ -116,9 +116,9 @@
   var foo = (x) => {
     var y = x * 2;
 
-    return function(z)  {
+    return function(z, baz)  {
       if (z.length > 3) {
-        return z.map( function baz(v){
+        return z.map( baz = (v) => {
           if (v > 3) return v + y;
           else return baz( v * 4 );
         } );
