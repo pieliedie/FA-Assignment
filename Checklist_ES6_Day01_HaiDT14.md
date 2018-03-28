@@ -194,7 +194,8 @@ VD: const x = 5;
     (function(){
       var x = 5;
 
-      for (var i=0; i<x; i++) {
+      for (let i=0; i<x; i++) {
+        fns[i] = () => i;
       }
     })();
 
