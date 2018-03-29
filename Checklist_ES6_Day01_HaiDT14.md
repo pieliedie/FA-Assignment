@@ -52,7 +52,7 @@
  ### 1.3.2 Compare arrow function syntax to ES5 function syntax ?<br>
  ```
  - Trong ES5, khi khai báo function thì cần sử dụng từ khóa "function", còn trong ES6, ta dùng dấu fat arrow "=>".
- - Khi sử dụng arrow function, có thể bỏ từ khóa return và cặp dấu {} trong một số trường hợp.
+ - Khi sử dụng arrow function, có thể bỏ từ khóa return và cặp dấu {} trong trường hợp vế phải là một biểu thức trả về giá trị.
   ```
   ### 1.3.3 Arrow function variations, try them in Babel Repl, fix error if any<br>
   ```
@@ -73,7 +73,7 @@
   const myFunc = x => 4;
   console.log(myFunc.name);
   ```
-  Answer: True.
+  Answer: True. Arrow function không thể khai báo dưới dạng function declaration được mà phải được gán vào một biến.
   ### 1.3.5 this
   Evaluate the code below, can you explain what happens ?
   ```
