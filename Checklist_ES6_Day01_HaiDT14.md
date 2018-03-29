@@ -66,7 +66,7 @@
     } catch (e) {}
   }
   const f6 = x => { return 10; }
-  const f7 = x => { y: x }
+  const f7 = x => { y: x } // fix to const f7 = x => ({ y : x })
   ```
   ### 1.3.4 True or false: arrow functions are anonymous ?
   ```
