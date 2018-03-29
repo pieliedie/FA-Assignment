@@ -179,7 +179,7 @@ vd: {
   }
 ```
 Trả lời: Click vào btn0, cửa sổ alert hiện ra với giá trị 0, tương tự khi click vào btn1, 2.
-          Lý do vì sao thì em chưa thực sự rõ, có thể do block scope của việc sử dụng từ khóa let.
+         Giải thích: Với việc khai báo biến bằng từ khóa let, mỗi một lần lặp sẽ tạo ra một block scope, giá trị của i sẽ được nhớ ở bên trong scope đó.
 ### 1.4.3 What is const ? Example ?
 ```
 const là từ khóa để khai báo biến có giá trị duy nhất khi được khởi tạo, không thể gán giá trị khác cho nó, không thể khai báo biến khác trùng tên với nó.
@@ -188,6 +188,7 @@ VD: const x = 5;
     console.log(x);
 ```
 ### 1.4.4 Exercise: fix code below (anywhere) so the console.log will display true
+Trả lời:
   ```
     var x = 2, fns = [];
 
