@@ -70,7 +70,23 @@ Trả lời:
         console.log('Con', this.id)
       }
     }
-Trả lời: Kết quả in ra là "Cha a" và "Con a". super.method() đã gọi đến phương thức method
-  ở class Cha. class Con đã kế thừa thuộc tính id và giá trị của nó từ class Cha.
+Trả lời: Kết quả in ra là "Cha a" và "Con a". super.method() đã gọi đến phương thức method ở class Cha. class Con đã kế thừa thuộc tính id và giá trị của nó từ class Cha.
     
 ### 1.4.4 What is static keyword ?
+Trả lời: static là từ khóa dùng khi khai báo phương thức tĩnh, tức là những phương thức được gọi không cần qua các instance.
+Vd:
+    
+    class Point {
+      constructor (x , y) {
+        this.x = x;
+        this.y = y;
+      }
+      
+      static add(a , b){
+        console.log(a + b);
+      }
+    }
+    
+    var p1 = new Point(1 , 2);
+    var p2 = new Point(3, 4);
+    Point.add(p1.x , p2.x); // 4
