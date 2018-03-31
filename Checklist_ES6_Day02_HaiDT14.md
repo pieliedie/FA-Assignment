@@ -161,7 +161,7 @@ Trả lời
       var a = [1, 2, 3];
       var b = [4, 5, 6];
 
-      g(...a, ...b); // ???
+      g(...a, ...b); // spread out
 ### 1.6.8 Exercise: fix the following code so console.log will print true
 Trả lời:
 
@@ -177,5 +177,5 @@ Trả lời:
         return f(...a1,...a2);
       }
 
-      console.log(g().join("") === "281012"); // must print true
+      console.log(g().join("") === "281012"); //  true
       
