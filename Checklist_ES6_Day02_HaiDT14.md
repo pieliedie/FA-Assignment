@@ -15,7 +15,7 @@ Person which have 2 fields: id, name and 1 method: sayHello which print hello to
   ```
 ### 1.4.2 What is keyword extends and super, provide an example that used both keyword ?
 Trả lời:
-* extends là từ khóa dùng khi tạo 1 class là con của 1 class khác.
+* extends là từ khóa dùng để link 2 function prototype.
 
       Vd: class Animal {
           constructor(name) {
@@ -362,15 +362,17 @@ Trả lời:
     
 ### 1.9.5 Exercise
     function upper(strings,...values) {
-      // TODO
+        let [a ,b, c,d] = strings;
+        let [e, f, g] = values;
+        return a + e.toUpperCase() + b + f.toUpperCase()+ c + g.toUpperCase() + d;
     }
 
     var name = 'Nguyen Van A',
       account = 'anv',
-      classname = 'Fresher Academ ES6';
+      classname = 'Fresher Academy ES6';
 
     console.log(
-      `Hello ____ (@____), welcome to the ____!` ===
+      upper`Hello ${name} (@${account}), welcome to the ${classname}!` ===
       'Hello NGUYEN VAN A (@ANV), welcome to the FRESHER ACADEMY ES6!'
     );
 ## 1.10 Modules
