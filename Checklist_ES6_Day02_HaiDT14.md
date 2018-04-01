@@ -359,7 +359,7 @@ Trả lời:
 
     var s = 'Fresher Academy';
     f`Hello ${s}`; // ??
-    
+Trả lời: Đoạn code trên in ra 1 mảng chứa phần tử "Hello ", 1 giá trị "Fresher Academy".
 ### 1.9.5 Exercise
     function upper(strings,...values) {
         let [a ,b, c,d] = strings;
