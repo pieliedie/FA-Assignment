@@ -1,3 +1,154 @@
+# 1 ES6
+## 1.1 Reference:
+  ### 1.1.1 ES6:
+  http://blog.thefirehoseproject.com/posts/12-reasons-es6-future-javascript-web-development/
+  ### 1.1.2 ES6 Features
+  https://github.com/lukehoban/
+  http://es6-features.org/#Constants
+  ### 1.1.3 JS Engines: 
+  https://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
+  ### 1.1.4 Transpilers: 
+  https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them
+## 1.2 History
+  ### 1.2.1 What is ECMAScript ?
+  ```
+  Trả lời: ECMAScript là một đặc tả ngôn ngữ được tiêu chuẩn hoá và đăng kí bản quyền bởi Ecma International. ECMAScript cung cấp các điều lệ, chi tiết và hướng dẫn mà các ngôn ngữ scripting cần phải tuân theo. Nó nổi tiếng vì được áp dụng bởi các ngôn ngữ client-side cho Web như Javascript, JScript, ActionScript.
+    - 2009: EcmaScript 5 được phát hành, đến nay đã được hỗ trợ hoàn toàn bởi các trình duyệt.
+    - Phiên bản EcmaScript 6 được phát hành vào năm 2015, cung cấp nhiều tính năng mới cho Javascript như block scope, arrow function và hỗ trợ lập trình hướng đối tượng tốt hơn.
+   ```
+  ### 1.2.2 What is JavaScript Engine ? Can you name a few JavaScript Engine used in some popular Browsers such as Chrome, Firefox, IE 
+  ```
+  Trả lời: JavaScript Engine là các máy ảo để thông dịch và chạy chương trình Javascript. 
+    Một số máy ảo phổ biến dùng trên các trình duyệt:
+    + Mozilla Firefox: Spidermonkey
+    + Chrome: V8
+    + Safari: JavaScriptCore
+    + IE: Chakra
+  ```
+  ### 1.2.3 What is Future JavaScript ?<br>
+  ```
+  Trả lời: Là ngôn ngữ Javascript mà áp dụng những tiêu chuẩn mới của EcmaScript.
+  ```
+  ### 1.2.4 What is problem you have if you want to use Future JavaScript in Present Browsers?<br>
+  ```
+  Trả lời: Một số trình duyệt phiên bản cũ có thể không hỗ trợ mã lệnh Javascript phiên bản mới.
+  ```
+  ### 1.2.5 What is transpiler ?<br>
+  ```
+  Trả lời: là một công cụ chuyển đổi mã lệnh JavaScript được dùng với mục đích chuyển đổi mã lệnh JavaScript được viết dựa trên tiêu chuẩn ECMAScript phiên bản mới về phiên bản cũ hơn trước đó.
+  ```
+  ### 1.2.6 What is Babel ? Try Babel online here: https://babeljs.io/repl/<br>
+  ```
+  Trả lời: Babel là 1 transpiler, giúp chuyển đổi mã lệnh JavaScript từ phiên bản mới về phiên bản cũ hơn.
+  ```
+## 1.3 Arrow Function
+  ### 1.3.1 Arrow Function syntax ?<br>
+  ```
+  Arrow function là cách khai báo hàm sử dụng cú pháp "=>"
+  Vd: var f = (x) => {console.log(x);}
+    Ta có thể viết tắt: var f = x => console.log(x);
+    Ở ES5, ta viết: var f = function (x){console.log(x);}
+ ```
+ ### 1.3.2 Compare arrow function syntax to ES5 function syntax ?<br>
+ ```
+ - Trong ES5, khi khai báo function thì cần sử dụng từ khóa "function", còn trong ES6, ta dùng dấu fat arrow "=>".
+ - Khi sử dụng arrow function, có thể bỏ từ khóa return và cặp dấu {} trong trường hợp vế phải là một biểu thức trả về giá trị.
+  ```
+  ### 1.3.3 Arrow function variations, try them in Babel Repl, fix error if any<br>
+  ```
+  const f1 = () => 10;
+  const f2 = x  => 3;
+  const f3 = (...x) => 3;
+  const f4 = (x, y) => 3;
+  const f5 = x => {
+    try {
+      1;
+    } catch (e) {}
+  }
+  const f6 = x => { return 10; }
+  const f7 = x => { y: x } // fix to const f7 = x => ({ y : x })
+  ```
+  ### 1.3.4 True or false: arrow functions are anonymous ?
+  ```
+  const myFunc = x => 4;
+  console.log(myFunc.name);
+  ```
+  Answer: True. Arrow function không thể khai báo dưới dạng function declaration được mà phải được gán vào một biến.
+  ### 1.3.5 this
+  Evaluate the code below, can you explain what happens ?
+  ```
+  var obj = {
+    a: 10,
+    method: function method() {
+      setTimeout(function () {
+          console.log(this.a);
+      }, 200);
+    }
+  }
+
+  var obj2 = {
+    a: 10,
+    method: function method() {
+      setTimeout(() => {
+          console.log(this.a);
+      }, 200);
+    }
+  }
+
+  obj.method(); // ??
+  obj2.mthod();
+  ```
+  Trả lời: Kết quả obj.method() là undefined, obj2.method() là 10.<br>
+  Giải thích: Ở object obj, hàm vô danh được truyền vào hàm setTimeOut dưới dạng callback. Hàm callback này được thực thi dưới dạng function invocation, this lúc này trỏ đến window.<br>
+  Ở obj2, this nằm trong arrow function, nó sẽ tự động tìm lên cha của arrow function đó là function method. Mà method là 1 thuộc tính của object obj2 cho nên this lúc này trỏ đến obj2.
+  ### 1.3.6 Promise
+  Compare 2 Promise call below, what do you think ? If v is null or undefined what will happend ? How you handle that ?
+   ```
+   p.then(function (v) { return v.id });
+
+   p.then(v => v.id);
+   ```
+  ### 1.3.7 Exercise 01: rewrite all function below with arrow functions and try to avoid curly braces {} as much as possible
+  Trả lời:
+  ```
+    (() => {
+
+  var foo = (x) => {
+    var y = x * 2;
+
+    return function(z, baz)  {
+      if (z.length > 3) {
+        return z.map( baz = (v) => {
+          if (v > 3) return v + y;
+          else return baz( v * 4 );
+        } );
+      }
+      else {
+        var obj = [];
+
+        setTimeout( () => {
+          obj.length = 1;
+          obj[0] = this.w;
+        }, 100 );
+
+        return obj;
+      }
+    };
+  }
+
+  var p = foo( 2 );
+  var list1 = [1,3,4];
+  var list2 = list1.concat( 6 );
+
+  list1 = p.call( { w: 42 }, list1 );
+  list2 = p( list2 );
+
+  setTimeout( () => {
+    console.log( list1[0] === list2.reduce( (s,v) => s + v, 0 ) );
+  }, 200 );
+})();
+  ```
+
 ## 1.4 Classes
 ### 1.4.1 Provide an example to create a new class named
 Person which have 2 fields: id, name and 1 method: sayHello which print hello to the console
@@ -90,6 +241,62 @@ Vd:
     var p1 = new Point(1 , 2);
     var p2 = new Point(3, 4);
     Point.add(p1.x , p2.x); // 4
+    
+## 1.5 Block Scope
+### 1.5.1 Compare let and var
+```
+- Biến được khai báo bởi var có scope là function scope hoặc global scope. Biến được khai báo bởi let có scope là block scope.
+Vd: let i = 5;
+    if(i === 5) {
+      let j = 2; 
+    }
+console.log(j); //ReferenceError
+
+- Biến khai báo bằng let không hoist lên đầu scope được.<br>
+vd: {
+  console.log(c); // undefined. Due to hoisting
+  var c = 2;
+}
+
+{
+  console.log(b); // ReferenceError: b is not defined
+  let b = 3;
+}
+```
+### 1.5.2 Closures scope, how do let work in closures, try example below
+  ```
+  for (let i = 0; i < 3; i++) {
+    let btn = document.getElementById('btn' + i);
+    btn.addEventListener('click', () {
+      alert(i);
+    });
+  }
+```
+Trả lời: Click vào btn0, cửa sổ alert hiện ra với giá trị 0, tương tự khi click vào btn1, 2.
+         Giải thích: Với việc khai báo biến bằng từ khóa let, mỗi một lần lặp sẽ tạo ra một block scope, giá trị của i sẽ được nhớ ở bên trong scope đó.
+### 1.5.3 What is const ? Example ?
+```
+const là từ khóa để khai báo biến có giá trị duy nhất khi được khởi tạo, không thể gán giá trị khác cho nó, không thể khai báo biến khác trùng tên với nó.
+VD: const x = 5;
+    x = 6; // Uncaught TypeError
+    console.log(x);
+```
+### 1.5.4 Exercise: fix code below (anywhere) so the console.log will display true
+Trả lời:
+  ```
+    var x = 2, fns = [];
+
+    (function(){
+      var x = 5;
+
+      for (let i=0; i<x; i++) {
+        fns[i] = () => i;
+      }
+    })();
+
+    console.log((x * 2) === fns[x*2]()); // must be true
+  ```
+
 ## 1.6 Default Values and the Gather/Spread Operator
 ### 1.6.1 Default Values: how to define a functon with default value in ES5 ? And in ES6 ?
 Trả lời
@@ -361,6 +568,7 @@ Trả lời:
     f`Hello ${s}`; // ??
 Trả lời: Đoạn code trên in ra 1 mảng chứa phần tử "Hello ", 1 giá trị "Fresher Academy".
 ### 1.9.5 Exercise
+Trả lời:
     function upper(strings,...values) {
         let [a ,b, c,d] = strings;
         let [e, f, g] = values;
@@ -380,3 +588,110 @@ Trả lời: Đoạn code trên in ra 1 mảng chứa phần tử "Hello ", 1 gi
 ### 1.10.2 What is ES6 import/export ?
 ### 1.10.3 What is export default ? How to import a exported default function ?
 ### 1.10.4 Circular Module Dependency: A imports B, B imports A, how does this work ?
+## 1.11 Module Loaders
+### 1.12 Collections
+### 1.12.1 Map: what is Map in JS ? How to iterate a Map ? How to get a value ? How to set a value ? How to know if a value is in Map ?
+Trả lời: 
+* Map là kiểu cấu trúc dữ liệu chứa các cặp key - value. Map có nhiều điểm tương đồng với object. 
+  Tuy nhiên:
+  * key trong map có thể là một object hoặc một kiểu nguyên thủy.
+  * Có thể xóa bỏ phần tử trong Map dễ dàng bằng method delete(key).
+Vd:
+      ```
+      let aMap = new Map(); // declare a map
+      let key1 = "string key";
+      let key2 = {a : "key"};
+      aMap.set(key1 , "the value of key 1"); // set data to map
+      aMap.set(key2, "the value of key 2");
+      console.log(aMap); // {"string key" => "the value of key 1", {…} => "the value of key 2"}
+      ```
+  * Có thể dễ dàng lấy được kích thước của Map bằng thuộc tính size, trong khi object thường phải làm thủ công.
+* Các cách iterate Map: 
+  * Dùng for...of
+    ``
+    let aMap = new Map([['foo', 3], ['bar', {}], ['baz', undefined]])
+    
+    for (let [key, value] of aMap.entries()){ 
+      console.log(`aMap[${key}] = ${value}`);
+    }
+    ```
+  * Dùng forEach
+    ```
+     function logMapElements(value, key, map) {
+      console.log(`m[${key}] = ${value}`);
+      }
+
+    new Map([['foo', 3], ['bar', {}], ['baz', undefined]])
+    .forEach(logMapElements);
+    ```
+* Cách get giá trị trong Map: Dùng method get(key).<br>
+  vd: aMap.get("string key"); // "the value of key 1"
+* Cách set giá trị trong Map: Dùng method set(key , value).<br>
+  vd:
+  ```
+  let key3 = "Key 3";
+  aMap.set(key3, "Value of key 3");
+  ```
+* Check sự tồn tại của 1 phần tử của Map: Dùng method has(key). Kết quả trả về là giá trị Boolean. <br>
+  vd: aMap.has(key3); // true
+### 1.12.2 Set: what is Set in JS ? How to iterate a Set ? How to get a value ? How to set a value ? How to know if a value is in Set ?
+* Set là cấu trúc dữ liệu chứa các phần tử có giá trị không trùng lặp nhau (unique).
+Vd:
+    
+    let aSet = new Set();
+    aSet.add(1);
+    aSet.add("Hai");
+    aSet.add(1); // does not affect
+    console.log(aSet); // {1, "Hai"}
+* Duyệt các phần tử trong Set:
+  * Dùng for...of:
+    ```
+    for(let elem of aSet.values()){
+      console.log(elem);
+    }
+    ```
+  * Dùng forEach():
+  ```
+  aSet.forEach(function(val){
+      console.log(val);
+  })
+  ```
+* Get value trong Set: Set không có phương thức để lấy ra một giá trị cụ thể, ta phải convert từ Set về Array để có thể truy xuất các phần tử bằng index.
+* Set value trong Set: Dùng phương thức add().
+* Check sự tồn tại của 1 giá trị trong Set: Sử dụng phương thức has(). Kết quả trả về của has() có kiểu Boolean.
+### 1.12.3 Weakmap same question like Map ? What is the difference between Map vs Weakmap
+Trả lời: 
+* WeakMap là kiểu cấu trúc dữ liệu chứa các cặp key - value. WeakMap có nhiều điểm tương đồng với object. 
+  Tuy nhiên:
+  * key trong WeakMap phải là một object.
+  * WeakMap có thể xóa 1 phần tử trong nó một cách dễ dàng bằng phương thức delete().
+Vd:
+      ```
+      let aWeakMap = new WeakMap(); // declare a Weakmap
+      let key2 = "string key";
+      let key1 = {a : "key"};
+      aWeakMap.set(key1 , "the value of key 1"); 
+      console.log(aWeakMap); // { {…} => "the value of key 1"}
+      aWeakMap.set(key2, "the value of key 2"); // TypeError
+      ```
+  * Có thể dễ dàng lấy được kích thước của WeakMap bằng thuộc tính size, trong khi object thường phải làm thủ công.
+* Các cách iterate WeakMap: Hiện tại em chưa tìm ra. Theo em, WeakMap không hỗ trợ việc iterating.
+* Cách get giá trị trong Map: Dùng method get(key).
+  vd: 
+  ```
+  let obj = { b : 1 }
+  aWeakMap.set(obj , "value of key obj");
+  aWeakMap.get(obj); // "value of key obj"
+  ```
+* Cách set giá trị trong Map: Dùng method set(key , value).
+  vd:
+  ```
+  let obj2 = { d : 1 }
+  aWeakMap.set(obj2 , "value of key obj2");
+  ```
+* Check sự tồn tại của 1 phần tử của Map: Dùng method has(key). Kết quả trả về là giá trị Boolean. <br>
+  vd: aMap.has(key3); // true
+* Sự khác biệt giữa Map và WeakMap:
+  * WeakMap chỉ nhận key là một object.
+  * WeakMap cho phép cơ chế Garbage Collection hoạt động.
+### 1.12.4 Weakset same question like Set ? What is the difference between Set vs WeakSet
