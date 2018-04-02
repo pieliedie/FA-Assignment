@@ -505,8 +505,8 @@ Trả lời:
       x,
       y
     }
-    console.log(o1); // ??
-    console.log(o2); // ??
+    console.log(o1); // { x : 2, y : 3}
+    console.log(o2); // { x : 2, y : 3}
     ```
 Nhận xét: Giá trị trả về của 2 object o1 và o2 giống nhau. Object o2 có được kết quả như vậy là nhờ sử dụng Object Literal Extensions. Khi thuộc tính được đặt tên giống với tên biến chứa value của thuộc tính đó, ta đặt trực tiếp tên biến vào trong phần khai báo object.
     
