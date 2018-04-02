@@ -563,6 +563,15 @@ Trả lời:
     console.log(typeof chaoDuy); // string
     
 ### 1.9.3 Interpolated Expression: can we use function inside ${…} if yes provide an example
+Trả lời: Chúng ta có thể sử dụng biểu thức thực thi hàm bên trong ${...}<br>
+Vd: 
+  ```
+  function f(){
+    return "darkness my old friend.";
+  }
+  let str = `Hello ${f()}`;
+  console.log(str);
+  ```
 ### 1.9.4 Tag Functions: consider the code below
 
     function f(strings, ...values) {
