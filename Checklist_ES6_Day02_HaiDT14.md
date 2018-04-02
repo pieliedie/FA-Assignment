@@ -108,6 +108,7 @@
 
    p.then(v => v.id);
    ```
+   
   ### 1.3.7 Exercise 01: rewrite all function below with arrow functions and try to avoid curly braces {} as much as possible
   Trả lời:
   ```
@@ -400,13 +401,15 @@ Vd:
 Trả lời: We can use destructuring togethe with default values.
 Vd: 
     
-    function fn([ x = 3, y = 4 ]) {
-      console.log(x, y);
+    function fn(x = 3, y = 4) {
+      return {
+        x : x,
+        y : y
+      }
     }
 
-    fn([ 1, 2 ]); // 1 2
-    fn([ 1 ]); // 1 4
-    fn([ ]); // 3 4
+    let {x , y} = fn();
+    console.log(x,y); // 3 4
     
 ### 1.7.3 Dumping values: provide example that extract the 3rd element in an array and don't care about the 1st, 2nd element ? Provide example that swap 2 numbers ?
 * Example of extract the 3rd element in an array
