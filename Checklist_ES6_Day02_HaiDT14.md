@@ -303,7 +303,7 @@ Trả lời
 * Defining a functon with default value in ES5:
 
       function f(param) {
-        param = param || "a default value";
+        param = (typeof param !== 'undefined') ? param : "a default value";
         console.log(param);
       }
 * Defining a functon with default value in ES6:
@@ -569,6 +569,7 @@ Trả lời:
 Trả lời: Đoạn code trên in ra 1 mảng chứa phần tử "Hello ", 1 giá trị "Fresher Academy".
 ### 1.9.5 Exercise
 Trả lời:
+
     function upper(strings,...values) {
         let [a ,b, c,d] = strings;
         let [e, f, g] = values;
@@ -594,7 +595,7 @@ Trả lời:
 Trả lời: 
 * Map là kiểu cấu trúc dữ liệu chứa các cặp key - value. Map có nhiều điểm tương đồng với object. 
   Tuy nhiên:
-  * key trong map có thể là một object hoặc một kiểu nguyên thủy.
+  * key trong map có thể là một object hoặc một kiểu nguyên thủy. Key trong object cũng có thể là 1 object, tuy nhiên các key đó đều trỏ đến 1 giá trị trong vùng nhớ
   * Có thể xóa bỏ phần tử trong Map dễ dàng bằng method delete(key).
 Vd:
       ```
@@ -608,7 +609,7 @@ Vd:
   * Có thể dễ dàng lấy được kích thước của Map bằng thuộc tính size, trong khi object thường phải làm thủ công.
 * Các cách iterate Map: 
   * Dùng for...of
-    ``
+    ```
     let aMap = new Map([['foo', 3], ['bar', {}], ['baz', undefined]])
     
     for (let [key, value] of aMap.entries()){ 
