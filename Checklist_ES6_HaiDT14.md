@@ -108,7 +108,7 @@
 
    p.then(v => v.id);
    ```
-   
+   Trả lời: Trong trường hợp code chạy bình thường thì 2 promise call bên trên hoạt động như nhau. Khi có lỗi xảy ra, việc debug code sử dụng anonymous function dễ hơn code sử dụng arrow function, bởi vị trí lỗi sẽ được log ra console.
   ### 1.3.7 Exercise 01: rewrite all function below with arrow functions and try to avoid curly braces {} as much as possible
   Trả lời:
   ```
