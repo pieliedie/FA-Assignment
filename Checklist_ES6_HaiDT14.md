@@ -705,3 +705,40 @@ Vd:
   * WeakMap chỉ nhận key là một object.
   * WeakMap cho phép cơ chế Garbage Collection hoạt động. (cần tìm hiểu thêm)
 ### 1.12.4 Weakset same question like Set ? What is the difference between Set vs WeakSet
+## 1.13 Proxies
+## 1.14 Promises
+## 1.15 Math + number + string + array + objects
+### 1.15.1 Array add of(..), from(..)* and fill(..). Provide example using them
+### 1.15.2 Provide example using Object.is and Object.assign
+### 1.15.3 Provide example using String.repeat and String.includes
+## 1.16 Binary and Octal literals
+## 1.17 Reflect Api
+## 1.18 Tail calls
+## 1.19 Symbols, Iterators, and Generators
+### 1.19.1 Symbols: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+#### what is symbols ? provide same
+#### Well-known Symbols?
+### 1.19.2 Iterators: study about Iterators (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+#### What is Iterators ?
+#### What is the Interface of Iterators ?
+#### Provide an example using Iterator ?
+#### Creating a Custom Iterators
+### 1.19.3 Generators
+#### What is Generators ? What is syntax to create a generator ? How you execute a generator ? How we handle errors in generator ?
+#### Where do you think we should use generator ?
+### 1.19.4 Exercise
+```
+var numbers = {
+  // ..
+};
+
+// should print 0..100 by 1s
+for (let num of numbers) {
+  console.log(num);
+}
+
+// should print 6..30 by 4s
+for (let num of /*..*/) {
+  console.log(num);
+}
+```
