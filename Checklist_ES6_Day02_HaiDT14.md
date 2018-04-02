@@ -643,12 +643,13 @@ Vd:
 ### 1.12.2 Set: what is Set in JS ? How to iterate a Set ? How to get a value ? How to set a value ? How to know if a value is in Set ?
 * Set là cấu trúc dữ liệu chứa các phần tử có giá trị không trùng lặp nhau (unique).
 Vd:
-    
+    ```
     let aSet = new Set();
     aSet.add(1);
     aSet.add("Hai");
     aSet.add(1); // does not affect
     console.log(aSet); // {1, "Hai"}
+    ```
 * Duyệt các phần tử trong Set:
   * Dùng for...of:
     ```
