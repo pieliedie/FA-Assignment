@@ -334,9 +334,9 @@ Trả lời
 
     f();
     
-   Trả lời: Đoạn code trên in ra màn hình giá trị 2. Khi thực thi hàm f, js engine sẽ tìm xem có đối số truyền vào f không. Vì không có đối số nào nên engine sẽ lấy giá trị mặc định ở các param là số 2 và 1 anonymous function trả về giá trị biến x. Biến x lúc này có giá trị là 2. Do đó, kết quả khi thực thi hàm fn là 2.
+   Trả lời: Đoạn code in ra màn hình giá trị 2. Khi thực thi hàm f, do không có đối số truyền vào, f sẽ gán giá trị cho các tham số bằng giá trị mặc định khi khai báo. Trong hàm f, hàm fn được thực thi, tìm thấy giá trị x trong scope của f có giá trị bằng 2. fn() trả về giá trị 2 và được in ra console.
 ### 1.6.4 What's a variadic arguments?
-  Trả lời: Là biến đại diện cho các tham số có số lượng không rõ ràng trong 1 function.
+  Trả lời: Là các tham số có số lượng không rõ ràng trong 1 function. Các tham số này được lưu trong một array là arguments
 ### 1.6.5 What is arguments in a JavaScript function ?
   Trả lời: arguments là 1 mảng gồm các phần tử tương ứng với các đối số của 1 function.
   Vd:
@@ -362,6 +362,8 @@ Trả lời
       var y = [4, 5];
       var z = [0, ...x, ...y ]; // spread out
 ### 1.6.7 In which way the … operator is used in following code
+Trả lời:
+
       function g(...arr) { // gather arguments
       }
 
@@ -379,8 +381,8 @@ Trả lời:
       function g() {
         var a1 = [2, 4];
         var a2 = [6, 8, 10, 12];
-        a1.splice(1,1);
-        a2.splice(0,1);
+        a1.splice(1,1); // remove element a1[1] from a1
+        a2.splice(0,1); // remove a2[0] from a2
         return f(...a1,...a2);
       }
 
@@ -432,6 +434,7 @@ Vd:
          let { nested: { a } } = obj;
          console.log(a);
 ### 1.7.7 Destructuring and Function Parameters: consider the array destructuring for parameters what will be printed out ?
+Trả lời:
 
       function fn([ x, y ]) {
         console.log(x, y);
@@ -595,7 +598,7 @@ Trả lời:
 Trả lời: 
 * Map là kiểu cấu trúc dữ liệu chứa các cặp key - value. Map có nhiều điểm tương đồng với object. 
   Tuy nhiên:
-  * key trong map có thể là một object hoặc một kiểu nguyên thủy. Key trong object cũng có thể là 1 object, tuy nhi đều stringify về cùng 1 giá trị là "[object Object]".
+  * key trong map có thể là một object hoặc một kiểu nguyên thủy.
   * Có thể xóa bỏ phần tử trong Map dễ dàng bằng method delete(key).
 Vd:
       ```
@@ -605,6 +608,8 @@ Vd:
       aMap.set(key1 , "the value of key 1"); // set data to map
       aMap.set(key2, "the value of key 2");
       console.log(aMap); // {"string key" => "the value of key 1", {…} => "the value of key 2"}
+      aMap.delete(key2);
+      console.log(aMap); // {"string key" => "the value of key 1"}
       ```
   * Có thể dễ dàng lấy được kích thước của Map bằng thuộc tính size, trong khi object thường phải làm thủ công.
 * Các cách iterate Map: 
