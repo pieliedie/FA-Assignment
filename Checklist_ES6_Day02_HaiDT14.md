@@ -323,7 +323,7 @@ Trả lời
     f(1);
     f();
     f();
-  Trả lời: Tham số x của f được gán bằng biểu thức thực thi function g. g được gọi lên mỗi khi thực thi hàm f không có đối số truyền vào, tổng cộng là 2 lần.
+  Trả lời: Tham số x của f được gán bằng biểu thức thực thi function g. Mỗi khi thực thi f, engine sẽ tìm đối số truyền vào f, nếu không có thì engine sẽ tìm lên khai báo hàm f, gán tham số bằng giá trị mặc định . Ở đây tham số mặc định là biểu thức thực thi hàm g, log ra màn hình chữ 'g' và trả về undefined. Trong ví dụ trên, g được gọi 2 lần. 
 ### 1.6.3 Evaluate the following code
     
     var x = 1;
@@ -336,7 +336,7 @@ Trả lời
     
    Trả lời: Đoạn code trên in ra màn hình giá trị 2. Khi thực thi hàm f, js engine sẽ tìm xem có đối số truyền vào f không. Vì không có đối số nào nên engine sẽ lấy giá trị mặc định ở các param là số 2 và 1 anonymous function trả về giá trị biến x. Biến x lúc này có giá trị là 2. Do đó, kết quả khi thực thi hàm fn là 2.
 ### 1.6.4 What's a variadic arguments?
-  Trả lời: Là các tham số có số lượng không rõ ràng trong 1 function.
+  Trả lời: Là biến đại diện cho các tham số có số lượng không rõ ràng trong 1 function.
 ### 1.6.5 What is arguments in a JavaScript function ?
   Trả lời: arguments là 1 mảng gồm các phần tử tương ứng với các đối số của 1 function.
   Vd:
@@ -535,7 +535,7 @@ Vd:
     
 ## 1.9 Template Strings
 ### 1.9.1 Template Strings: what is template strings ?
-Trả lời: Là cách viết 1 chuỗi string có thể nhúng được biểu thức vào chuỗi string đó.
+Trả lời: Là chuỗi string có thể nhúng được biểu thức vào nó. Biểu thức được đặt trong dấu ${}.
 Vd:
   
     let name = "Hai";
@@ -595,7 +595,7 @@ Trả lời:
 Trả lời: 
 * Map là kiểu cấu trúc dữ liệu chứa các cặp key - value. Map có nhiều điểm tương đồng với object. 
   Tuy nhiên:
-  * key trong map có thể là một object hoặc một kiểu nguyên thủy. Key trong object cũng có thể là 1 object, tuy nhiên các key đó đều trỏ đến 1 giá trị trong vùng nhớ
+  * key trong map có thể là một object hoặc một kiểu nguyên thủy. Key trong object cũng có thể là 1 object, tuy nhi đều stringify về cùng 1 giá trị là "[object Object]".
   * Có thể xóa bỏ phần tử trong Map dễ dàng bằng method delete(key).
 Vd:
       ```
