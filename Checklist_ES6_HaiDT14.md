@@ -494,7 +494,7 @@ Trả lời:
    
 ## 1.8 Object Literal Extensions
 ### 1.8.1 Concise properties: consider the following code what do you think ?
-
+    ```
     var x = 2, y = 3;
     var o1 = {
       x: x,
@@ -507,9 +507,11 @@ Trả lời:
     }
     console.log(o1); // ??
     console.log(o2); // ??
+    ```
+Nhận xét: Giá trị trả về của 2 object o1 và o2 giống nhau. Object o2 có được kết quả như vậy là nhờ sử dụng Object Literal Extensions. Khi thuộc tính được đặt tên giống với tên biến chứa value của thuộc tính đó, ta đặt trực tiếp tên biến vào trong phần khai báo object.
     
 ### 1.8.2 Concise Methods: consider the following code what do you think ?
-
+```
     var o1 = {
       x: function() {
         console.log('o1.x');
@@ -526,19 +528,21 @@ Trả lời:
       y() {}
     }
     o2.x();
-    
+```
+Nhận xét: Với Object Literal Extensions, ta có thể rút gọn cách viết khai báo một function trong object.
 ### 1.8.3 ES5 Getter/Setter: consider the following code
-
+```
     var o = {
       _id: 10,
       get id() { return this._id++; },
       set id(v) { this._id = v; }
     }
 
-    o.id; // ??
+    o.id; // 10
     o.id = 100;
-    o.id; // ??
-    
+    o.id; // 100
+```
+Trả lời: get và set là 2 phương thức dùng để gán một thuộc tính của object cho một function. Khi truy cập giá trị thuộc tính, hàm get sẽ được gọi để trả về 1 giá trị. Khi gán giá trị mới cho thuộc tính, hàm set sẽ được gọi để truyền giá trị mới đó gán cho thuộc tính bên trong hàm.
 ## 1.9 Template Strings
 ### 1.9.1 Template Strings: what is template strings ?
 Trả lời: Là chuỗi string có thể nhúng được biểu thức vào nó. Biểu thức được đặt trong dấu ${}.
@@ -601,7 +605,24 @@ Trả lời:
     );
 ## 1.10 Modules
 ### 1.10.1 What is module pattern ?
+* Module là 1 design pattern, 1 phương pháp implement source code thành các khối mã lệnh, mỗi một khối mã lệnh thường được viết trong 1 file.
+* Việc sử dụng module giúp code dễ mở rộng, dễ tái sử dụng.
+* Trong Javascript, các module thường được viết dưới dạng IIFE để đảm bảo tính đóng gói của source code.
 ### 1.10.2 What is ES6 import/export ?
+* export: function dùng để trích các function, object, kiểu nguyên thủy từ một module ra để chương trình sử dụng.
+* import: function dùng để nhận các dữ liệu được export từ module khác để sử dụng.
+VD:
+```
+// fellowship.js
+const fellowship = ['Frodo', 'Samwise', 'Gandalf'];
+export { fellowship };
+```
+
+```
+// index.js
+import { fellowship } from './fellowship';
+console.log(fellowship); //  ['Frodo', 'Samwise', 'Gandalf']
+```
 ### 1.10.3 What is export default ? How to import a exported default function ?
 ### 1.10.4 Circular Module Dependency: A imports B, B imports A, how does this work ?
 ## 1.11 Module Loaders
