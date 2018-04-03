@@ -375,15 +375,14 @@ Trả lời:
 ### 1.6.8 Exercise: fix the following code so console.log will print true
 Trả lời:
 
-      function f(...arr) { 
-        return arr;
+      function f(a, b, c, ...arr) { 
+        return [a,...arr];
       }
 
       function g() {
         var a1 = [2, 4];
         var a2 = [6, 8, 10, 12];
-        a1.splice(1,1); // remove element a1[1] from a1
-        a2.splice(0,1); // remove a2[0] from a2
+        
         return f(...a1,...a2);
       }
 
