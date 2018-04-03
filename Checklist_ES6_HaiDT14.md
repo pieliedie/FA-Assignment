@@ -462,6 +462,12 @@ Trả lời:
       }
 
       function check(data) {
+      console.log(data.foo ,
+            data.bar ,
+            data.baz[0] , data.baz[1] ,data.baz[2] ,
+            data.bam.qux ,
+            data.bam.qam);
+            
         console.log(
           56 === (
             data.foo +
@@ -482,12 +488,17 @@ Trả lời:
         }
       };
 
-      function response(/* TODO: object destructuring */) {
-
+      function response({foo: x , baz: [a,b,c], bam : { qux : y }} ) {
+        let { foo, bar ,baz, bam : { qux, qam } } = defaults;
         check({
-        /* TODO: object constructuring */
+          foo: foo + x,
+          bar: bar,
+          baz: [a,b,c],
+          bam: {
+            qux: qux + y,
+            qam: qam
+          }
         });
-
       }
 
       ajax("http://fun.tld",response);
