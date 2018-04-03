@@ -596,7 +596,7 @@ Vd:
 
     var s = 'Fresher Academy';
     f`Hello ${s}`; // ??
-Trả lời: Đoạn code trên in ra 1 mảng chứa phần tử "Hello ", 1 mảng chứa phần tử "Fresher Academy".
+Trả lời: Đoạn code trên in ra 1 mảng chứa 2 phần tử ["Hello ", ""], 1 mảng chứa phần tử "Fresher Academy".
 ### 1.9.5 Exercise
 Trả lời:
 
