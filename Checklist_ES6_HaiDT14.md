@@ -743,7 +743,7 @@ Vd:
   vd: aMap.has(key3); // true
 * Sự khác biệt giữa Map và WeakMap:
   * WeakMap chỉ nhận key là một object.
-  * WeakMap cho phép cơ chế Garbage Collection hoạt động. (cần tìm hiểu thêm)
+  * WeakMap cho phép cơ chế Garbage Collection hoạt động.
 ### 1.12.4 Weakset same question like Set ? What is the difference between Set vs WeakSet
 ## 1.13 Proxies
 ## 1.14 Promises
