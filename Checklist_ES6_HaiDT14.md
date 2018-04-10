@@ -745,6 +745,9 @@ Vd:
   * WeakMap chỉ nhận key là một object.
   * WeakMap cho phép cơ chế Garbage Collection hoạt động.
 ### 1.12.4 Weakset same question like Set ? What is the difference between Set vs WeakSet
+* WeakSet, cũng như Set, là 1 collection để lưu các giá trị unique. Tuy nhiên WeakSet chỉ nhận các giá trị object.
+* WeakSet cho phép cơ chế Garbage collection hoạt động trong trường hợp giá trị lưu trong WeakSet bị mất tham chiếu.
+* Các method trong WeakSet: add(), delete(), has().
 ## 1.13 Proxies
 ## 1.14 Promises
 ## 1.15 Math + number + string + array + objects
