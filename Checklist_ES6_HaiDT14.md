@@ -749,6 +749,49 @@ Vd:
 * WeakSet cho phép cơ chế Garbage collection hoạt động trong trường hợp giá trị lưu trong WeakSet bị mất tham chiếu.
 * Các method trong WeakSet: add(), delete(), has().
 ## 1.13 Proxies
+* Proxies là object để định nghĩa các hành vi tùy biến (custom behavior) cho các hoạt động cơ bản của object. Các hoạt động cơ bản của object bao gồm: truy cập đến thuộc tính , thay đổi thuộc tính, khởi tạo đối tượng... của object.
+* Syntax: Proxy(target, handler)
+  * target: object đích, được proxy ảo hóa.
+  * handler: object chứa các traps.
+  * trap: các phương thức sẽ được kích hoạt khi target thực hiện các hành vi như truy cập đến thuộc tính , thay đổi thuộc tính, khởi tạo đối tượng,..
+* Ứng dụng:
+  * validate dũ liệu khi set giá trị cho object
+  ```
+  const handler = {
+  set: function(obj, prop, value) {
+    if (typeof value !== 'string') {
+      throw new Error('Only string values can be stored in this object!');
+    } else {
+      obj[prop] = value;  
+    }
+  }
+  }
+  const obj = {};
+  const proxiedObj = new Proxy(obj, handler);
+  proxiedObj.name = 'Foo Bar'; // This should be allowed
+  proxiedObj.age = 24; // This will throw an error.
+  ```
+  * Thiết lập quyền truy cập private cho thuộc tính của object.
+  ```
+  const handler = {
+  get: function(obj, prop) {
+    if (prop === 'id') { // Check if the id is being accessed
+      throw new Error('Cannot access private properties!'); // Throw an error
+    } else {
+      return obj[prop]; // If it's not the id property, return it as usual
+    }
+  }
+  }
+
+  const person = {
+    id: 1,
+    name: 'Foo Bar'
+  }
+
+  const proxiedPerson = new Proxy(person, handler);
+
+  console.log(proxiedPerson.id); // This will throw an error.
+  ```
 ## 1.14 Promises
 ## 1.15 Math + number + string + array + objects
 ### 1.15.1 Array add of(..), from(..)* and fill(..). Provide example using them
