@@ -11,8 +11,8 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "jest",
-      "git add"
+      "git add",
+      "jest --bail --findRelatedTests"
     ]
   },
   "author": "",
