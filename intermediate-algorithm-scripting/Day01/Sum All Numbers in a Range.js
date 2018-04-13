@@ -1,4 +1,4 @@
-const sumAll = (arr) => {
+function sumAll(arr) {
   let result = 0;
   const max = Math.max(...arr);
   const min = Math.min(...arr);
@@ -6,6 +6,7 @@ const sumAll = (arr) => {
     result += i;
   }
   return result;
-};
+}
 
-sumAll([1, 4]);
+module.exports = sumAll;
+

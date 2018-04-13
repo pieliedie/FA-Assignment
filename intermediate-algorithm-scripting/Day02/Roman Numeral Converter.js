@@ -1,4 +1,4 @@
-const convertToNumberArray = (num) => {
+function convertToNumberArray(num) {
   const arr = String(num).split('');
   const result = [];
   for (const i in arr) {
@@ -10,9 +10,9 @@ const convertToNumberArray = (num) => {
     result.push(arr[i]);
   }
   return result;
-};
+}
 
-const convertToRoman = (num) => {
+function convertToRoman(num) {
   const arr = convertToNumberArray(num);
   const result = [];
   const romanMap = new Map();
@@ -53,6 +53,6 @@ const convertToRoman = (num) => {
     }
   }
   return result.join('');
-};
+}
 
-convertToRoman(55);
+module.exports = convertToRoman;

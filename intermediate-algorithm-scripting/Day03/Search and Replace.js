@@ -1,4 +1,4 @@
-const myReplace = (str, before, after) => {
+function myReplace(str, before, after) {
   let afterr = after;
   const arr = str.split(' ');
   for (const i in arr) {
@@ -10,6 +10,6 @@ const myReplace = (str, before, after) => {
     }
   }
   return arr.join(' ');
-};
+}
 
-myReplace('He is Sleeping on the couch', 'Sleeping', 'sitting');
+module.exports = myReplace;

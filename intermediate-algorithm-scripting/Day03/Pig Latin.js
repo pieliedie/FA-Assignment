@@ -1,4 +1,4 @@
-const translatePigLatin = (str) => {
+function translatePigLatin(str) {
   const arr = str.split('');
   if (['a', 'e', 'i', 'o', 'u'].includes(arr[0])) {
     arr.push('way');
@@ -11,6 +11,6 @@ const translatePigLatin = (str) => {
   arr.push('ay');
 
   return arr.join('');
-};
+}
 
-translatePigLatin('glove');
+module.exports = translatePigLatin;
