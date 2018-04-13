@@ -6,12 +6,12 @@
   "scripts": {
     "format": "prettier --single-quote --write",
     "test": "jest",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepush": "jest --bail --findRelatedTests"
   },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "jest --bail --findRelatedTests",
       "git add"
     ]
   },

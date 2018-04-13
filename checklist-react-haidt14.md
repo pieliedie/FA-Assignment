@@ -87,12 +87,47 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
 * [X] Understand why JSX<br>
     * Cú pháp JSX giúp lồng phần code markup và phần code logic lại với nhau để tạo thành các component.
     * Giúp người phát triển dễ hình dung được layout của component do cú pháp của JSX có nét tương đồng với ngôn ngữ markup.
-* [ ] Understand how to use JSX
-* [ ] Understand how to add JavaScript to JSX
-* [ ] Understand the limitation of JavaScript in JSX
-* [ ] Understand how we add style in JSX? How to
-* [ ] Understand what is JSX Comment
-* [ ] Practice put JSX Comment
-* [ ] Understand Naming Convention of JSX
-* [ ] Know why class and for of HTML is not the same in JSX
-* [ ] Practice know how to iterating & rendering list in React: http://jasonjl.me/blog/2015/04/18/rendering-list-of-elements-in-react-with-jsx/
+* [X] Understand how to use JSX
+* [X] Understand how to add JavaScript to JSX
+    * Có thể nhúng các biểu thức Javascript vào trong JSX.<br>
+    * Syntax: đặt biểu thức Javascript vào trong cặp { }
+    ```
+    const user = {
+    firstName: 'Harper',
+    lastName: 'Perez'
+    };
+
+    const element = (
+    <h1>
+        Hello, {user.firstName}! 
+    </h1>
+    );
+    ```
+* [X] Understand the limitation of JavaScript in JSX<br>
+    Đoạn code truyền vào JSX chỉ có thể là biểu thức, không thể là câu lệnh.
+* [X] Understand how we add style in JSX? How to
+    * Sử dụng css class: sử dụng className thay cho class để tránh xung đột với các từ khóa khác của Javascript. Nhược điểm: Khi style 1 component thì các component khác cùng className với component đó sẽ bị ảnh hưởng => giải pháp: tạo className mới cho nó hoặc dùng inline style.
+    * Sử dụng inline style trong JSX:
+    ```
+    const divStyle = {
+        color: 'blue',
+        backgroundImage: 'url(' + imgUrl + ')',
+    };
+
+    function HelloWorldComponent() {
+        return <div style={divStyle}>Hello World!</div>;
+    }
+    ```
+    Nhược điểm: Khả năng tái sử dụng không cao, code trở nên dài dòng.
+    * Sử dụng css-in-js: Nhược điểm: các file js cần phải được load xong để trả về code css, layout trang web trước đó sẽ không có css => xấu
+* [X] Understand what is JSX Comment<br>
+    Cú pháp comment: {/* This is a comment*/}
+* [X] Practice put JSX Comment
+* [X] Understand Naming Convention of JSX
+    * Đối với component người dùng tự định nghĩa, tên component phải được viết dưới dạng Pascal Case. Component phải được viết dưới dạng thẻ đơn < />.
+    ```
+    const element = <div> <MyButton/> </div>;
+    ```
+* [X] Know why class and for of HTML is not the same in JSX
+    * Vì bản chất của JSX là Javascript. Nếu JSX dùng class hay for như trên HTML sẽ gây xung đột với những từ khóa của JS. Giải pháp: Sử dụng className, htmlFor thay cho class, for.
+* [X] Practice know how to iterating & rendering list in React: http://jasonjl.me/blog/2015/04/18/rendering-list-of-elements-in-react-with-jsx/
