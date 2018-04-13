@@ -1,4 +1,4 @@
-const pairElement = (str) => {
+function pairElement(str) {
   const arr = str.split('');
   const result = [];
   for (const elem of arr) {
@@ -19,6 +19,6 @@ const pairElement = (str) => {
     }
   }
   return result;
-};
+}
 
-pairElement('GCG');
+module.exports = pairElement;
