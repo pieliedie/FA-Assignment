@@ -21,9 +21,9 @@ test('booWho({ "a": 1 }) should return false.', () => {
   expect(booWho(true)).toBe(true);
 });
 
-// test('booWho(1) should return false.', () => {
-//   expect(booWho(true)).toBe(true);
-// });
+test('booWho(1) should return false.', () => {
+  expect(booWho(true)).toBe(true);
+});
 
 test('booWho(NaN) should return false.', () => {
   expect(booWho(true)).toBe(true);
