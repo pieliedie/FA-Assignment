@@ -131,3 +131,65 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
 * [X] Know why class and for of HTML is not the same in JSX
     * Vì bản chất của JSX là Javascript. Nếu JSX dùng class hay for như trên HTML sẽ gây xung đột với những từ khóa của JS. Giải pháp: Sử dụng className, htmlFor thay cho class, for.
 * [X] Practice know how to iterating & rendering list in React: http://jasonjl.me/blog/2015/04/18/rendering-list-of-elements-in-react-with-jsx/
+## 1.6 State [0%]
+* [ ] Understand State in React (what, why and how it work?)
+* [ ] Know how to change State of a Component via user input or programmatically
+## 1.7 Props [0%]
+* [X] Understand Props in React<br>
+    * Khi React tìm thấy một component mà người dùng tự định nghĩa, nó đưa các thuộc tính của component đó vào một object được gọi là props. VD:
+    ```
+    <MyButton name = "Add" />  // props { name : "Add"}
+    ```
+    * Như vậy, props là 1 object chứa các giá trị được truyền từ bên ngoài vào trong Component.
+    * props bất biến dưới góc nhìn của component, nó chỉ là thông tin được truyền vào component.
+    * Khi muốn validate giá trị của props, hãy dùng PropTypes để làm việc đó:
+    ```
+    class App extends React.Component {
+        render() {
+            return ( 
+                <div>
+                    <h1> Hello, {this.props.name} </h1>
+                    <h3>Array: {this.props.propArray}</h3>			
+                    <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
+                </div>
+                );
+            }
+        }
+    App.propTypes = {
+        name: PropTypes.string,
+        propArray: PropTypes.array.isRequired,
+        propBool: PropTypes.bool.isRequired,
+    };
+    ```
+* [X] Understand why use props to create "reusable components"<br>
+    Chúng ta có thể đặt nhiều component cùng loại tại nhiều nơi, với các giá trị truyền vào khác nhau tùy theo mỗi component. Và props được dùng để lưu các giá trị truyền vào ấy.
+* [X] Can we set default value for a Prop<br>
+    Khi muốn set giá trị mặc định cho props, chúng ta dùng defaultProps để làm việc đó.
+    ```
+    class App extends React.Component {
+        render() {
+            return ( 
+                <div>
+                    <h1> Hello, {this.props.name} </h1>
+                    <h3>Array: {this.props.propArray}</h3>			
+                    <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
+                </div>
+                );
+            }
+        }
+    App.propTypes = {
+        name: PropTypes.string,
+        propArray: PropTypes.array.isRequired,
+        propBool: PropTypes.bool.isRequired,
+    };
+    App.defaultProps = {
+        name: 'Tutorialspoint.com',
+        propArray: [1, 2, 3, 4, 5],
+        propBool: true,
+        propFunc: function(e) {
+            return e
+        },
+        propNumber: 1,
+        propString: "String value..."
+    }
+    ```

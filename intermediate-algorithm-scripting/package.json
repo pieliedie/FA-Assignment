@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --single-quote --write",
+    "eslint": "eslint",
     "test": "jest",
     "precommit": "lint-staged",
-    "prepush": "jest --bail --findRelatedTests"
+    "prepush": "jest"
   },
   "lint-staged": {
     "*.js": [
