@@ -132,7 +132,12 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
     * Vì bản chất của JSX là Javascript. Nếu JSX dùng class hay for như trên HTML sẽ gây xung đột với những từ khóa của JS. Giải pháp: Sử dụng className, htmlFor thay cho class, for.
 * [X] Practice know how to iterating & rendering list in React: http://jasonjl.me/blog/2015/04/18/rendering-list-of-elements-in-react-with-jsx/
 ## 1.6 State [0%]
-* [ ] Understand State in React (what, why and how it work?)
+* [X] Understand State in React (what, why and how it work?)
+    * what: State là một thuộc tính của Component, dùng để lưu trữ dữ liệu có khả năng thay đổi bên trong component.
+    * Giá trị của state chỉ có thể được truy cập ở bên trong component.
+    * why: Trong nhiều trường hợp, dữ liệu không bất biến mà có thể thay đổi, VD: Số bản ghi trong 1 table, số lượng bài hát trong 1 playlist hay trạng thái công việc của 1 to-do list. Do đó cần phải có 1 phương pháp lưu trữ dữ liệu mà giá trị của dữ liệu có thể thay đổi được.
+    * how it work: Giá trị của state được khởi tạo bên trong hàm constructor.
+    * Để thay đổi giá trị của state, ta dùng hàm setState. Về lý thuyết, ta vẫn có thể thay đổi trực tiếp giá trị của state không cần qua hàm setState, tuy nhiên React sẽ không render giá trị mới đó lên DOM. 
 * [ ] Know how to change State of a Component via user input or programmatically
 ## 1.7 Props [0%]
 * [X] Understand Props in React<br>
@@ -142,7 +147,7 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
     ```
     * Như vậy, props là 1 object chứa các giá trị được truyền từ bên ngoài vào trong Component.
     * props bất biến dưới góc nhìn của component, nó chỉ là thông tin được truyền vào component.
-    * Khi muốn validate giá trị của props, hãy dùng PropTypes để làm việc đó:
+    * Khi muốn validate giá trị của props, ta dùng PropTypes để làm việc đó:
     ```
     class App extends React.Component {
         render() {
@@ -175,8 +180,8 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
                     <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
                 </div>
                 );
-            }
         }
+    }
     App.propTypes = {
         name: PropTypes.string,
         propArray: PropTypes.array.isRequired,
@@ -193,3 +198,16 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
         propString: "String value..."
     }
     ```
+## 1.8 Props Validation [0%]
+* [X] Understand what is validation<br>
+Trả lời: Là việc kiểm tra tính đúng đắn của dữ liệu đầu vào dựa trên những điều kiện cho trước.
+* [X] Know how to validate Props in React<br>
+Trả lời: Sử dụng PropTypes để làm việc này.
+## 1.9 Component Lifecycle Methods [%]
+* [ ] Understand what is lifecycle methods
+* [ ] Understand why we need lifecycle methods
+    * Giải phóng bộ nhớ khi component bị hủy.
+* [ ] Understand 7 lifecycle methods of React Component (http://busypeoples.github.io/post/react-component-lifecycle/)
+* [ ] Understand componentDidMount = where you do DOM manipulation & AJAX request
+* [ ] Understand componentWillMount = clean up after your React components gets destroyed
+* [ ] Practice: create a Component that have 7 lifecycle methods and observe the behaviour
