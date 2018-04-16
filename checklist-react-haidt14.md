@@ -220,5 +220,6 @@ Trả lời: Sử dụng PropTypes để làm việc này.
 
     * componentWillUnmount được gọi khi component bị gỡ bỏ khỏi cây DOM. (when the DOM is rerendered without the component, or if the user navigates to a different website or closes their web browser.)
 * [X] Understand componentDidMount = where you do DOM manipulation & AJAX request
-* [ ] Understand componentWillUnmount = clean up after your React components gets destroyed
-* [ ] Practice: create a Component that have 7 lifecycle methods and observe the behaviour
+* [X] Understand componentWillUnmount = clean up after your React components gets destroyed
+* [ ] Practice: create a Component that have 7 lifecycle methods and observe the behaviour<br>
+    https://codepen.io/haidotienn/pen/xWvWbx?editors=1010#0
