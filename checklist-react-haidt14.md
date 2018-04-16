@@ -138,6 +138,7 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
     * why: Trong nhiều trường hợp, dữ liệu không bất biến mà có thể thay đổi, VD: Số bản ghi trong 1 table, số lượng bài hát trong 1 playlist hay trạng thái công việc của 1 to-do list. Do đó cần phải có 1 phương pháp lưu trữ dữ liệu mà giá trị của dữ liệu có thể thay đổi được.
     * how it work: Giá trị của state được khởi tạo bên trong hàm constructor.
     * Để thay đổi giá trị của state, ta dùng hàm setState. Về lý thuyết, ta vẫn có thể thay đổi trực tiếp giá trị của state không cần qua hàm setState, tuy nhiên React sẽ không render giá trị mới đó lên DOM. 
+    * setState nhận giá trị đầu vào là 1 function hoặc 1 object.
 * [ ] Know how to change State of a Component via user input or programmatically
 ## 1.7 Props [0%]
 * [X] Understand Props in React<br>
@@ -191,11 +192,6 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
         name: 'Tutorialspoint.com',
         propArray: [1, 2, 3, 4, 5],
         propBool: true,
-        propFunc: function(e) {
-            return e
-        },
-        propNumber: 1,
-        propString: "String value..."
     }
     ```
 ## 1.8 Props Validation [0%]
@@ -204,10 +200,25 @@ Trả lời: Là việc kiểm tra tính đúng đắn của dữ liệu đầu 
 * [X] Know how to validate Props in React<br>
 Trả lời: Sử dụng PropTypes để làm việc này.
 ## 1.9 Component Lifecycle Methods [%]
-* [ ] Understand what is lifecycle methods
+* [X] Understand what is lifecycle methods<br>
+    Là các method được gọi tại những thời điểm nhất định trong vòng đời của 1 component.
 * [ ] Understand why we need lifecycle methods
+    * Cần có method để cập nhật những thay đổi trên props và state của component.
     * Giải phóng bộ nhớ khi component bị hủy.
 * [ ] Understand 7 lifecycle methods of React Component (http://busypeoples.github.io/post/react-component-lifecycle/)
-* [ ] Understand componentDidMount = where you do DOM manipulation & AJAX request
-* [ ] Understand componentWillMount = clean up after your React components gets destroyed
+    * componentWillMount được gọi trước khi render component.
+
+    * componentDidMount được gọi sau lần render component đầu tiên. Đây là nơi diễn ra AJAX request, DOM update hoặc state update.Phương thức này còn được dùng để tích hợp với các framework JS khác và các hàm delay quá trình thực thi như setTimeOut hay setInterval. chúng ta sẽ sử dụng phương thức này để update state, do đó ta có thể kích hoạt các lifecycle method khác.
+
+    * componentWillReceiveProps được gọi ngay khi props được update.
+
+    * shouldComponentUpdate là hàm trả vê giá trị true hoặc false, thực hiện khi props hoặc state thay đổi. Cần sử dụng đến hàm này để xử lý xem có cần update component không.
+
+    * componentWillUpdate được gọi ngay trước khi render component. Hàm này thực hiện dựa vào kết quả của hàm trên (shouldComponentUpdate). Nếu hàm trên trả về false, thì React sẽ không gọi hàm này
+
+    * componentDidUpdate được gọi sau khi component được render lại, từ kết quả của componentWillUpdate.
+
+    * componentWillUnmount được gọi khi component bị gỡ bỏ khỏi cây DOM. (when the DOM is rerendered without the component, or if the user navigates to a different website or closes their web browser.)
+* [X] Understand componentDidMount = where you do DOM manipulation & AJAX request
+* [ ] Understand componentWillUnmount = clean up after your React components gets destroyed
 * [ ] Practice: create a Component that have 7 lifecycle methods and observe the behaviour
