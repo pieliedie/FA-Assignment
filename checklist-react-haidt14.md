@@ -235,5 +235,7 @@ Trả lời: Sử dụng PropTypes để làm việc này.
 ## 1.13 Mixins [0%]
 * [ ] Understand mixins = reuse methods across multiple components (https://reactjs.org/docs/components-and-props.html#mixins)
 ## 1.14 Practice [0%]
-* [X] Build Countdown app using React
-* [X] Build Todo app using React
+* [X] Build Countdown app using React: https://github.com/pieliedie/countdown-clock
+* [X] Build Todo app using React: https://github.com/pieliedie/to-do-list
+
+
