@@ -220,5 +220,20 @@ Trả lời: Sử dụng PropTypes để làm việc này.
 
     * componentWillUnmount được gọi khi component bị gỡ bỏ khỏi cây DOM. (when the DOM is rerendered without the component, or if the user navigates to a different website or closes their web browser.)
 * [X] Understand componentDidMount = where you do DOM manipulation & AJAX request
-* [ ] Understand componentWillUnmount = clean up after your React components gets destroyed
+* [X] Understand componentWillUnmount = clean up after your React components gets destroyed
 * [ ] Practice: create a Component that have 7 lifecycle methods and observe the behaviour<br>
+    https://codepen.io/haidotienn/pen/xWvWbx?editors=1010#0
+## 1.10 Forms [%]
+* [ ] Understand how to to forms in React<br>
+    * Thông thường, form sẽ giữ trạng thái của riêng nó. Tuy nhiên, trong React, component chứa form sẽ quản lý trạng thái của form đó.
+    * Component quản lý trạng thái của form bằng các function truyền vào attribute onChange của các thẻ input, textarea, select,...
+## 1.11 Events [%]
+* [X] Understand how to handle events in React such as: click event on a button, keypress event on a input
+## 1.12 Refs [%]
+* [X] Understand refs = how to acess DOM nodes within your React Component (https://reactjs.org/docs/refs-and-the-dom.html#the-ref-string-attribute)
+* [ ] Practice use refs to access a div and change style add text to it
+## 1.13 Mixins [0%]
+* [ ] Understand mixins = reuse methods across multiple components (https://reactjs.org/docs/components-and-props.html#mixins)
+## 1.14 Practice [0%]
+* [X] Build Countdown app using React
+* [X] Build Todo app using React
