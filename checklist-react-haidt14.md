@@ -139,7 +139,8 @@ Về mặt lý thuyết, components là các javascript function. Chúng nhận 
     * how it work: Giá trị của state được khởi tạo bên trong hàm constructor.
     * Để thay đổi giá trị của state, ta dùng hàm setState. Về lý thuyết, ta vẫn có thể thay đổi trực tiếp giá trị của state không cần qua hàm setState, tuy nhiên React sẽ không render giá trị mới đó lên DOM. 
     * setState nhận giá trị đầu vào là 1 function hoặc 1 object.
-* [ ] Know how to change State of a Component via user input or programmatically
+    * State là bất đồng bộ.
+* [X] Know how to change State of a Component via user input or programmatically
 ## 1.7 Props [0%]
 * [X] Understand Props in React<br>
     * Khi React tìm thấy một component mà người dùng tự định nghĩa, nó đưa các thuộc tính của component đó vào một object được gọi là props. VD:
