@@ -32,7 +32,10 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.4.1 Understand Flux architecture
 * Flux là một kiến trúc tổng quát do Facebook phát triển để định nghĩa cách quản lý luồng dữ liệu của hệ thống. Ở đây, dữ liệu được điều hướng theo 1 luồng duy nhất.
 ### 1.4.2 Understand Universal Data Flow
-* TODO
+1 Views bắn các actions đến dispatcher.
+2 Dispatcher gửi actions đến mọi stores.
+3 Stores cập nhật dữ liệu rồi gửi dữ liệu đến views.
+4 views render dữ liệu ra màn hình.
 ### 1.4.3 Understand Action, Dispatcher, Store, View
 * Action: là 1 object chứa các thông tin mô tả sự thay đổi của hệ thống. VD: Khi click vào nút completed của 1 todo item, 1 action tên là "completed-todo" được bắn ra:
 ```
