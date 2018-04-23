@@ -14,7 +14,7 @@
 * https://medium.com/@lazlojuly/how-to-get-started-with-unit-testing-part-1-7f490bbf560a
 * https://stackoverflow.com/questions/16860/getting-started-with-unit-testing
 * https://blog.risingstack.com/node-hero-node-js-unit-testing-tutorial/
-* https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02
+* https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02<br>
 Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 hàm, 1 module, 1 object,...Ưu điểm: Giúp test đơn giản, dễ thực thi, viết nhiều unit test thì khả năng tìm được nhiều bug rất cao,
 ### 1.2.3 Understand about Test runner (e.g jest, mocha)
 * TODO
