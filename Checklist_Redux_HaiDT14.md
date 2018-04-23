@@ -32,6 +32,7 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.4.1 Understand Flux architecture
 * Flux là một kiến trúc tổng quát do Facebook phát triển để định nghĩa cách quản lý luồng dữ liệu của hệ thống. Ở đây, dữ liệu được điều hướng theo 1 luồng duy nhất.
 ### 1.4.2 Understand Universal Data Flow
+* TODO
 ### 1.4.3 Understand Action, Dispatcher, Store, View
 * Action: là 1 object chứa các thông tin mô tả sự thay đổi của hệ thống. VD: Khi click vào nút completed của 1 todo item, 1 action tên là "completed-todo" được bắn ra:
 ```
@@ -40,3 +41,16 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
   todoID: '1234',
 }
 ```
+* Dispatcher: là 1 địa điểm duy nhất nơi các action được gửi đến và được truyền đi tới mọi store. Các store đăng ký nhận ation bằng cách truyền callback.
+* Store: là nơi chứa dữ liệu của chương trình. Giá trị trong store thay đổi khi nhận được action từ dispatcher.
+* View: Là nơi hiển thị dữ liệu từ store. View cũng phải đăng ký nhận sự thay đổi dữ liệu từ store. Khi store có sự thay đổi về dữ liệu, view phải nhận dữ liệu mới đó và re-render.
+## 1.5 Redux
+### 1.5.1 Understand Redux (https://redux.js.org/)
+### 1.5.2 Understand Action, Reducers, Store, Data Flow
+### 1.5.3 Understand Async Action, Async Flow, Middleware
+## 1.6 Redux Saga
+### 1.6.1 https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
+### 1.6.2 Understand limitation of Redux in Async Flow ?
+### 1.6.3 Understand ES6 generator (http://2ality.com/2015/03/es6-generators.html)
+### 1.6.4 Understand effect
+### 1.6.5 Understand fork, take, race, put, call, select, takeLatest, takeEvery
