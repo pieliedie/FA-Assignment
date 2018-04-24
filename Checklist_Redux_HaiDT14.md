@@ -21,7 +21,9 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.2.4 Understand about Test Assertion Framework (e.g chai, jasmine)
 * Test Assertion Framework là các thư viện dùng để tạo test case. Mỗi framework có cú pháp riêng để sử dụng. Các test runner cần phải được tích hợp vào trong test framework để thực sự chạy được test case.
 ### 1.2.5 Understand about spies, stubs and mocks (e.g sinon) (https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js)
-* TODO
+* spies, stubs và mocks được gọi là những cặp test double dùng để test những impure function
+* spies: dùng để test function call, kiểm tra xem số lần gọi hàm, kiểm tra các đối số khi gọi hàm, kiểm tra giá trị hay lỗi được trả về.
+* 
 ### 1.2.6 Understand code coverage (e.g nyc)
 * độ phủ:  tỉ lệ (tính theo %) test case đã được thực hiện trên tổng số test case cần thiết cho ứng dụng.
 ### 1.2.7 Understand HTTP mocking (e.g nock)
