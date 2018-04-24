@@ -17,9 +17,9 @@
 * https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02<br>
 Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 hàm, 1 module, 1 object,...Ưu điểm: Giúp test đơn giản, dễ thực thi, viết nhiều unit test thì khả năng tìm được nhiều bug rất cao,
 ### 1.2.3 Understand about Test runner (e.g jest, mocha)
-* Test runner là các chương trình thực thi các đoạn code chứa phần unit test và các thiết lập liên quan, kết quả test được trả về cho người dùng.
+* Test runner là các chương trình, môi trường thực thi các đoạn code chứa phần unit test và các thiết lập liên quan, kết quả test được trả về cho người dùng.
 ### 1.2.4 Understand about Test Assertion Framework (e.g chai, jasmine)
-* TODO
+* Test Assertion Framework là các thư viện dùng để tạo test case. Mỗi framework có cú pháp riêng để sử dụng. Các test runner cần phải được tích hợp vào trong test framework để thực sự chạy được test case.
 ### 1.2.5 Understand about spies, stubs and mocks (e.g sinon) (https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js)
 * TODO
 ### 1.2.6 Understand code coverage (e.g nyc)
