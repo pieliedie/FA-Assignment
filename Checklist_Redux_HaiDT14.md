@@ -61,6 +61,8 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * Redux là 1 thư viện triển khai kiến trúc Flux dùng để quản lý dữ liệu của 1 javascript application. 
 * Với các ứng dụng sử dụng Redux, dữ liệu được tập trung tại 1 nguồn tin cậy duy nhất, gọi là store. Khi có bất kỳ sự kiện nào xảy ra ở phần view, dữ liệu thay đổi được gửi đến store để xử lý và trả về cho view hiển thị dữ liệu.
 ### 1.5.2 Understand Action, Reducers, Store, Data Flow
+* Action: object javascript chứa dữ liệu để gửi đến store.
+* Reducer: 
 ### 1.5.3 Understand Async Action, Async Flow, Middleware
 ## 1.6 Redux Saga
 ### 1.6.1 https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
