@@ -28,7 +28,7 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * độ phủ:  tỉ lệ (tính theo %) test case đã được thực hiện trên tổng số test case cần thiết cho ứng dụng.
 ### 1.2.7 Understand HTTP mocking (e.g nock)
 ## 1.3 Understand disadvantage of React alone
-* React không có cơ chế tập trung dữ liệu. Ở React, dữ liệu đều nằm hết ở Component cha và chỉ được truyền theo 1 chiều duy nhất, đó là từ component cha đến component con thông qua props. 
+* React không có cơ chế tập trung dữ liệu. Dữ liệu trong ứng dụng React đến từ nhiều nguồn, tại nhiều thời điểm, do đó việc quản lý dữ liệu rất khó khăn. 
 * Cần 1 ứng dụng bên thứ 3 để tập trung dữ liệu: local storage, fetch api, ...
 ## 1.4 Flux
 ### 1.4.1 Understand Flux architecture
@@ -42,15 +42,24 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * Action: là 1 object chứa các thông tin mô tả sự thay đổi của hệ thống. VD: Khi click vào nút completed của 1 todo item, 1 action tên là "completed-todo" được bắn ra:
 ```
 {
-  type: 'completed-todo',
-  todoID: '1234',
+  type: COMPLETED_TODO,
+  payload: {
+   todoID: '1234'
+  }
 }
 ```
+ * 1 action Flux tiêu chuẩn gồm các thuộc tính:
+  * type: là 1 string constant
+  * payload: thông tin, dữ liệu của action
+  * error: Kiểu boolean. Nếu error mang giá trị true, thì giá trị của payload phải là 1 error object.
+  * meta: dữ liệu gửi kèm action và không dược xếp vào dạng payload.
 * Dispatcher: là 1 địa điểm duy nhất nơi các action được gửi đến và được truyền đi tới mọi store. Các store đăng ký nhận ation bằng cách truyền callback.
 * Store: là nơi chứa dữ liệu của chương trình. Giá trị trong store thay đổi khi nhận được action từ dispatcher.
 * View: Là nơi hiển thị dữ liệu từ store. View cũng phải đăng ký nhận sự thay đổi dữ liệu từ store. Khi store có sự thay đổi về dữ liệu, view phải nhận dữ liệu mới đó và re-render.
 ## 1.5 Redux
-### 1.5.1 Understand Redux (https://redux.js.org/)
+### 1.5.1 Understand Redux (https://redux.js.org/)<br>
+* Redux là 1 thư viện triển khai kiến trúc Flux dùng để quản lý dữ liệu của 1 javascript application. 
+* Với các ứng dụng sử dụng Redux, dữ liệu được tập trung tại 1 nguồn tin cậy duy nhất, gọi là store. Khi có bất kỳ sự kiện nào xảy ra ở phần view, dữ liệu thay đổi được gửi đến store để xử lý và trả về cho view hiển thị dữ liệu.
 ### 1.5.2 Understand Action, Reducers, Store, Data Flow
 ### 1.5.3 Understand Async Action, Async Flow, Middleware
 ## 1.6 Redux Saga
