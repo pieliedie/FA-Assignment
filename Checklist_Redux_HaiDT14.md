@@ -62,7 +62,13 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * Với các ứng dụng sử dụng Redux, dữ liệu được tập trung tại 1 nguồn tin cậy duy nhất, gọi là store. Khi có bất kỳ sự kiện nào xảy ra ở phần view, dữ liệu thay đổi được gửi đến store để xử lý và trả về cho view hiển thị dữ liệu.
 ### 1.5.2 Understand Action, Reducers, Store, Data Flow
 * Action: object javascript chứa dữ liệu để gửi đến store.
-* Reducer: 
+* Reducer: các method nhận giá trị đầu vào là state, action và trả về giá trị state mới sau khi update dữ liệu.
+* Store: Là object nhận các action để cập nhật dữ liệu và truyền dữ liệu sang view để hiển thị cho người dùng.
+* Data Flow:
+ 1. Khi có action từ view, hàm store.dispatch(action) được thực hiện.
+ 2. Bên trong hàm dispatch, các hàm reducer được thực thi dựa trên action type, cập nhật các giá trị trong state.
+ 3. hàm combineReducers được gọi để hợp nhất các state trả về của các reducer thành 1 state duy nhất.
+ 4. store lưu lại state mới, lần lượt gọi các listener callback function đã đăng ký với store. Cuối dùng, dữ liệu dược render ra màn hình.
 ### 1.5.3 Understand Async Action, Async Flow, Middleware
 ## 1.6 Redux Saga
 ### 1.6.1 https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
