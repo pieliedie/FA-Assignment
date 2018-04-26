@@ -8,7 +8,7 @@
 * Authorization: Xác định xem đối tượng sau khi được xác thực có khả năng truy cập đến những tài nguyên nào của hệ thống.
 ## 1.2 Testing
 ### 1.2.1 Understand TDD, BDD: https://codeutopia.net/blog/2015/03/01/unit-testing-tdd-and-bdd/
-* TDD: Là mô hình phát triển trọng tâm hướng đến việc kiểm thử (test-driven development). TDD được xây dựng dựa trên 2 tiêu chí: Test first, then refactoring. Quá trình test, tìm fix bug, sửa đổi lại code cho pass test diễn ra thành 1 vòng lặp cho đến khi đạt độ phủ cao nhất.
+* TDD: Là mô hình phát triển trọng tâm hướng đến việc kiểm thử (test-driven development). Các test case phải được viết trước khi thực hiện coding. TDD được xây dựng dựa trên 2 tiêu chí: Test first, then refactoring. Quá trình test, tìm fix bug, sửa đổi lại code cho pass test diễn ra thành 1 vòng lặp cho đến khi đạt độ phủ cao nhất.
 * BDD: Mô hình phát triển hướng đến hành vi. BDD giúp xây dựng hệ thống kịch bản để thực thi test dưới góc độ ngôn ngữ tự nhiên từ các yêu cầu của khách hàng. 
 ### 1.2.2 Understand about Unit Test:
 * https://medium.com/@lazlojuly/how-to-get-started-with-unit-testing-part-1-7f490bbf560a
@@ -22,8 +22,8 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * Test Assertion Framework là các thư viện dùng để tạo test case. Mỗi framework có cú pháp riêng để sử dụng. Các test runner cần phải được tích hợp vào trong test framework để thực sự chạy được test case.
 ### 1.2.5 Understand about spies, stubs and mocks (e.g sinon) (https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js)
 * spies, stubs và mocks được gọi là những cặp test double dùng để test những impure function
-* spies: dùng để test function call, thường để kiểm tra xem số lần gọi hàm, kiểm tra các đối số khi gọi hàm, kiểm tra giá trị hay lỗi được trả về.
-* 
+* spies: dùng để test function call, thường để kiểm tra xem số lần gọi hàm, kiểm tra các đối số khi gọi hàm, kiểm tra giá trị hay lỗi được trả về. Spy có thể "cải trang" thành các function và hoạt động thay cho các function ấy, khi được thực thi, spy sẽ ghi lại các thông tin như số lần được gọi, giá trị trả về, lỗi trả về,...
+* stub: Cách thức hoạt động giống như spy. Stub có khả năng thay đổi hành vi của function, vd như force một function throw ra 1 error.
 ### 1.2.6 Understand code coverage (e.g nyc)
 * độ phủ:  tỉ lệ (tính theo %) test case đã được thực hiện trên tổng số test case cần thiết cho ứng dụng.
 ### 1.2.7 Understand HTTP mocking (e.g nock)
