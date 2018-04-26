@@ -70,6 +70,9 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
  3. hàm combineReducers được gọi để hợp nhất các state trả về của các reducer thành 1 state duy nhất.
  4. store lưu lại state mới, lần lượt gọi các listener callback function đã đăng ký với store. Cuối dùng, dữ liệu dược render ra màn hình.
 ### 1.5.3 Understand Async Action, Async Flow, Middleware
+* Async Action:
+ * Tồn tại 2 thời điểm quan trọng khi thực hiện các tác vụ bất đồng bộ: Thời điểm gọi hàm, thời điểm nhận phản hồi. => cần định nghĩa những action cho từng thời điểm, cho từng phản hồi (success or error). 
+* Async Flow: Redux thuần chỉ hỗ trợ data flow đồng bộ
 ## 1.6 Redux Saga
 ### 1.6.1 https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
 ### 1.6.2 Understand limitation of Redux in Async Flow ?
