@@ -72,7 +72,8 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.5.3 Understand Async Action, Async Flow, Middleware
 * Async Action:
  * Tồn tại 2 thời điểm quan trọng khi thực hiện các tác vụ bất đồng bộ: Thời điểm gọi hàm, thời điểm nhận phản hồi. => cần định nghĩa những action cho từng thời điểm, cho từng phản hồi (success or error). 
-* Async Flow: Redux thuần chỉ hỗ trợ data flow đồng bộ
+* Async Flow: Redux thuần chỉ hỗ trợ data flow đồng bộ, cho nên cần sử dụng thêm các middleware để thực thi các tác vụ bất đồng bộ và trả về dữ liệu đồng bộ để Redux thực hiện các hành động tiếp theo trong data flow.
+* Middleware: Các chương trình thực hiện ở giữa thời điểm action bắt đầu được gửi từ view và thời điểm action đó truyền đến reducer. TODO
 ## 1.6 Redux Saga
 ### 1.6.1 https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
 ### 1.6.2 Understand limitation of Redux in Async Flow ?
