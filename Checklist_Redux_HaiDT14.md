@@ -78,7 +78,7 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.6.1 https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
 ### 1.6.2 Understand limitation of Redux in Async Flow ?
 ### 1.6.3 Understand ES6 generator (http://2ality.com/2015/03/es6-generators.html)<br>
-* Là chức năng mới của es6, có thể chặn lại quá trình thực thi của 1 function.
-
+* Là tính năng mới của es6, có thể chặn lại quá trình thực thi của 1 function.
+* Generator có khả năng thu, phát dữ liệu.
 ### 1.6.4 Understand effect
 ### 1.6.5 Understand fork, take, race, put, call, select, takeLatest, takeEvery
