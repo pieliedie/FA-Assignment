@@ -21,7 +21,7 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.2.4 Understand about Test Assertion Framework (e.g chai, jasmine)
 * Test Assertion Framework là các thư viện dùng để tạo test case. Mỗi framework có cú pháp riêng để sử dụng. Các test runner cần phải được tích hợp vào trong test framework để thực sự chạy được test case.
 ### 1.2.5 Understand about spies, stubs and mocks (e.g sinon) (https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js)
-* spies, stubs và mocks được gọi là những cặp test double dùng để test những impure function
+* spies, stubs và mocks được gọi là những test double dùng để test những impure function
 * spies: dùng để test function call, thường để kiểm tra xem số lần gọi hàm, kiểm tra các đối số khi gọi hàm, kiểm tra giá trị hay lỗi được trả về. Spy có thể "cải trang" thành các function và hoạt động thay cho các function ấy, khi được thực thi, spy sẽ ghi lại các thông tin như số lần được gọi, giá trị trả về, lỗi trả về,...
 * stub: Cách thức hoạt động giống như spy. Stub có khả năng thay đổi hành vi của function, vd như force một function throw ra 1 error.
 * mock: TODO
@@ -35,10 +35,10 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.4.1 Understand Flux architecture
 * Flux là một kiến trúc tổng quát do Facebook phát triển để định nghĩa cách quản lý luồng dữ liệu của hệ thống. Ở đây, dữ liệu được điều hướng theo luồng 1 chiều duy nhất.
 ### 1.4.2 Understand Universal Data Flow
-1 Views bắn các actions đến dispatcher.<br>
-2 Dispatcher gửi actions đến mọi stores.<br>
-3 Stores cập nhật dữ liệu rồi gửi dữ liệu đến views.<br>
-4 views render dữ liệu ra màn hình.<br>
+1. Views bắn các actions đến dispatcher.<br>
+2. Dispatcher gửi actions đến mọi stores.<br>
+3. Stores cập nhật dữ liệu rồi gửi dữ liệu đến views.<br>
+4. views render dữ liệu ra màn hình.<br>
 ### 1.4.3 Understand Action, Dispatcher, Store, View
 * Action: là 1 object chứa các thông tin mô tả sự thay đổi của hệ thống. VD: Khi click vào nút completed của 1 todo item, 1 action tên là "completed-todo" được bắn ra:
 ```
