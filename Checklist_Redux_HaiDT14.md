@@ -35,10 +35,10 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 ### 1.4.1 Understand Flux architecture
 * Flux là một kiến trúc tổng quát do Facebook phát triển để định nghĩa cách quản lý luồng dữ liệu của hệ thống. Ở đây, dữ liệu được điều hướng theo luồng 1 chiều duy nhất.
 ### 1.4.2 Understand Universal Data Flow
-1 Views bắn các actions đến dispatcher.
-2 Dispatcher gửi actions đến mọi stores.
-3 Stores cập nhật dữ liệu rồi gửi dữ liệu đến views.
-4 views render dữ liệu ra màn hình.
+1 Views bắn các actions đến dispatcher.<br>
+2 Dispatcher gửi actions đến mọi stores.<br>
+3 Stores cập nhật dữ liệu rồi gửi dữ liệu đến views.<br>
+4 views render dữ liệu ra màn hình.<br>
 ### 1.4.3 Understand Action, Dispatcher, Store, View
 * Action: là 1 object chứa các thông tin mô tả sự thay đổi của hệ thống. VD: Khi click vào nút completed của 1 todo item, 1 action tên là "completed-todo" được bắn ra:
 ```
@@ -66,10 +66,10 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * Reducer: các method nhận giá trị đầu vào là state, action và trả về giá trị state mới sau khi update dữ liệu.
 * Store: Là object nhận các action để cập nhật dữ liệu và truyền dữ liệu sang view để hiển thị cho người dùng.
 * Data Flow:
- 1. Khi có action từ view, hàm store.dispatch(action) được thực hiện.
- 2. Bên trong hàm dispatch, các hàm reducer được thực thi dựa trên action type, cập nhật các giá trị trong state.
- 3. hàm combineReducers được gọi để hợp nhất các state trả về của các reducer thành 1 state duy nhất.
- 4. store lưu lại state mới, lần lượt gọi các listener callback function đã đăng ký với store. Cuối dùng, dữ liệu dược render ra màn hình.
+ 1. Khi có action từ view, hàm store.dispatch(action) được thực hiện.<br>
+ 2. Bên trong hàm dispatch, các hàm reducer được thực thi dựa trên action type, cập nhật các giá trị trong state.<br>
+ 3. hàm combineReducers được gọi để hợp nhất các state trả về của các reducer thành 1 state duy nhất.<br>
+ 4. store lưu lại state mới, lần lượt gọi các listener callback function đã đăng ký với store. Cuối dùng, dữ liệu dược render ra màn hình.<br>
 ### 1.5.3 Understand Async Action, Async Flow, Middleware
 * Async Action:
  * Tồn tại 2 thời điểm quan trọng khi thực hiện các tác vụ bất đồng bộ: Thời điểm gọi hàm, thời điểm nhận phản hồi. => cần định nghĩa những action cho từng thời điểm, cho từng phản hồi (success or error). 
