@@ -24,6 +24,7 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * spies, stubs và mocks được gọi là những cặp test double dùng để test những impure function
 * spies: dùng để test function call, thường để kiểm tra xem số lần gọi hàm, kiểm tra các đối số khi gọi hàm, kiểm tra giá trị hay lỗi được trả về. Spy có thể "cải trang" thành các function và hoạt động thay cho các function ấy, khi được thực thi, spy sẽ ghi lại các thông tin như số lần được gọi, giá trị trả về, lỗi trả về,...
 * stub: Cách thức hoạt động giống như spy. Stub có khả năng thay đổi hành vi của function, vd như force một function throw ra 1 error.
+* mock: TODO
 ### 1.2.6 Understand code coverage (e.g nyc)
 * độ phủ:  tỉ lệ (tính theo %) test case đã được thực hiện trên tổng số test case cần thiết cho ứng dụng.
 ### 1.2.7 Understand HTTP mocking (e.g nock)
@@ -32,7 +33,7 @@ Trả lời: Là việc kiểm thử trên từng đơn vị của code, i.e: 1 
 * Cần 1 ứng dụng bên thứ 3 để tập trung dữ liệu: local storage, fetch api, ...
 ## 1.4 Flux
 ### 1.4.1 Understand Flux architecture
-* Flux là một kiến trúc tổng quát do Facebook phát triển để định nghĩa cách quản lý luồng dữ liệu của hệ thống. Ở đây, dữ liệu được điều hướng theo 1 luồng duy nhất.
+* Flux là một kiến trúc tổng quát do Facebook phát triển để định nghĩa cách quản lý luồng dữ liệu của hệ thống. Ở đây, dữ liệu được điều hướng theo luồng 1 chiều duy nhất.
 ### 1.4.2 Understand Universal Data Flow
 1 Views bắn các actions đến dispatcher.
 2 Dispatcher gửi actions đến mọi stores.
